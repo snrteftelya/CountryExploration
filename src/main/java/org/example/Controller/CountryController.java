@@ -1,5 +1,6 @@
-package org.example;
+package org.example.Controller;
 
+import org.example.model.Country;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
