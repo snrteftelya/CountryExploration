@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/countries")
@@ -23,12 +22,10 @@ public class CountryController {
     public ResponseEntity<List<Country>> getCountries(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String capital) {
-
         List<Country> filtered = countries.stream()
                 .filter(c -> (name == null || c.getName().equalsIgnoreCase(name)) &&
                         (capital == null || c.getCapital().equalsIgnoreCase(capital)))
-                .collect(Collectors.toList());
-
+                .toList();
         return ResponseEntity.ok(filtered);
     }
 
