@@ -1,16 +1,15 @@
 package org.example.service;
 
+import jakarta.transaction.Transactional;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import lombok.AllArgsConstructor;
 import org.example.model.Country;
 import org.example.model.Nation;
 import org.example.repository.CountryRepository;
 import org.example.repository.NationRepository;
-import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 @AllArgsConstructor
 @Service
@@ -23,7 +22,8 @@ public class NationService {
     public List<Nation> getNationsByCountryId(Long countryId) {
         Country country = countryRepository.findById(countryId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "country with id " + countryId + " does not exist, that's why you can't view nations from its"));
+                        "country with id " + countryId
+                                + " does not exist, that's why you can't view nations from its"));
         return country.getNations();
     }
 
@@ -34,7 +34,8 @@ public class NationService {
     public List<Country> getCountriesByNationId(Long nationId) {
         Nation nation = nationRepository.findById(nationId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "nation, which id " + nationId + " does not exist, that's why you can't view countries from its"));
+                        "nation, which id " + nationId
+                                + " does not exist, that's why you can't view countries from its"));
         return nation.getCountries();
     }
 
@@ -42,11 +43,13 @@ public class NationService {
 
         Country country = countryRepository.findById(countryId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "country, which id " + countryId + " does not exist, that's why you can't add nation to its"));
+                        "country, which id " + countryId
+                                + " does not exist, that's why you can't add nation to its"));
 
         Nation nation = nationRepository.findNationsByName(nationRequest.getName());
 
-        if (country.getNations().stream().noneMatch(nationFunc -> nationFunc.getName().equals(nationRequest.getName()))) {
+        if (country.getNations().stream().noneMatch(
+                nationFunc -> nationFunc.getName().equals(nationRequest.getName()))) {
             if (nation != null) {
                 nationRepository.save(nation);
                 country.getNations().add(nation);
@@ -57,7 +60,9 @@ public class NationService {
                 countryRepository.save(country);
             }
         } else {
-            throw new IllegalStateException("nation with name " + nationRequest.getName() + " already exists in the country " + country.getName() + ".");
+            throw new IllegalStateException("nation with name "
+                    + nationRequest.getName() + " already exists in the country "
+                    + country.getName() + ".");
         }
 
     }
@@ -69,21 +74,25 @@ public class NationService {
                              String religion) {
         Nation nation = nationRepository.findById(nationId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "nation with id " + nationId + " does not exist, that's why you can't update this"));
+                        "nation with id " + nationId
+                                + " does not exist, that's why you can't update this"));
 
         if (name != null && !name.isEmpty() && !Objects.equals(nation.getName(), name)) {
-            Optional<Nation> nationOptional = Optional.ofNullable(nationRepository.findNationsByName(name));
+            Optional<Nation> nationOptional = Optional.ofNullable(
+                    nationRepository.findNationsByName(name));
             if (nationOptional.isPresent()) {
                 throw new IllegalStateException("nation with this name exists");
             }
             nation.setName(name);
         }
 
-        if (language != null && !language.isEmpty() && !Objects.equals(nation.getLanguage(), language)) {
+        if (language != null && !language.isEmpty()
+                && !Objects.equals(nation.getLanguage(), language)) {
             nation.setLanguage(language);
         }
 
-        if (religion != null && !religion.isEmpty() && !Objects.equals(nation.getReligion(), religion)) {
+        if (religion != null && !religion.isEmpty()
+                && !Objects.equals(nation.getReligion(), religion)) {
             nation.setReligion(religion);
         }
     }
@@ -92,7 +101,8 @@ public class NationService {
 
         Nation nation = nationRepository.findById(nationId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "nation, which id " + nationId + " does not exist, that's why you can't delete its"));
+                        "nation, which id " + nationId
+                                + " does not exist, that's why you can't delete its"));
 
         List<Country> countries = nation.getCountries();
 
@@ -108,11 +118,13 @@ public class NationService {
 
         Country country = countryRepository.findById(countryId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "country with id " + countryId + " doesn't exist, that's why you can't delete its"));
+                        "country with id " + countryId
+                                + " doesn't exist, that's why you can't delete its"));
 
         Nation nation = nationRepository.findById(nationId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "nation with id " + nationId + " does not exist, that's why you can't delete its"));
+                        "nation with id " + nationId
+                                + " does not exist, that's why you can't delete its"));
 
         country.getNations().remove(nation);
         countryRepository.save(country);

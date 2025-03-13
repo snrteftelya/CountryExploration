@@ -1,16 +1,15 @@
 package org.example.service;
 
-import org.example.repository.CountryRepository;
-import org.example.model.City;
-import org.example.model.Country;
-import org.example.repository.CityRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import lombok.AllArgsConstructor;
+import org.example.model.City;
+import org.example.model.Country;
+import org.example.repository.CityRepository;
+import org.example.repository.CountryRepository;
+import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
@@ -27,7 +26,8 @@ public class CityService {
     public List<City> getCitiesByCountryId(Long countryId) {
         Country country = countryRepository.findById(countryId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "country with id " + countryId + " does not exist, that's why you can't view cities from its"));
+                        "country with id " + countryId
+                                + " does not exist, that's why you can't view cities from its"));
         return country.getCities();
     }
 
@@ -35,21 +35,26 @@ public class CityService {
 
         Country country = countryRepository.findById(countryId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "country, which id " + countryId + " does not exist, that's why you can't add new city"));
+                        "country, which id " + countryId
+                                + " does not exist, that's why you can't add new city"));
 
-        if (country.getCities().stream().noneMatch(city -> city.getName().equals(cityRequest.getName()))) {
+        if (country.getCities().stream().noneMatch(
+                city -> city.getName().equals(cityRequest.getName()))) {
             country.getCities().add(cityRequest);
             cityRepository.save(cityRequest);
             countryRepository.save(country);
         } else {
-            throw new IllegalStateException("city with name " + cityRequest.getName() + " already exists in the country " + country.getName() + ".");
+            throw new IllegalStateException("city with name "
+                    + cityRequest.getName()
+                    + " already exists in the country " + country.getName() + ".");
         }
     }
 
     public void deleteCitiesByCountryId(Long countryId) {
         Country country = countryRepository.findById(countryId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "country with id " + countryId + " does not exist, that's why you can't delete cities from its"));
+                        "country with id " + countryId
+                                + " does not exist, that's why you can't delete cities from its"));
 
         country.getCities().clear();
         countryRepository.save(country);

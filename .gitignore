@@ -2,6 +2,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 **/src/test/
+.env
 
 ### STS ###
 .apt_generated
@@ -32,4 +33,4 @@ build/
 .vscode/
 .mvn/wrapper
 mvnw
-mvnw.cmd
+mvnw.cmd.env

@@ -1,14 +1,13 @@
 package org.example.service;
 
-import org.example.model.Country;
-import org.example.repository.CountryRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import lombok.AllArgsConstructor;
+import org.example.model.Country;
+import org.example.repository.CountryRepository;
+import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Service
@@ -39,7 +38,8 @@ public class CountryService {
         boolean exists = countryRepository.existsById(countryId);
         if (!exists) {
             throw new IllegalStateException(
-                    "country, which id " + countryId + " can not be deleted, because id does not exist");
+                    "country, which id " + countryId
+                            + " can not be deleted, because id does not exist");
         }
         countryRepository.deleteById(countryId);
     }
@@ -57,7 +57,8 @@ public class CountryService {
                               Double gdp) {
         Country country = countryRepository.findById(countryId)
                 .orElseThrow(() -> new IllegalStateException(
-                        "country with id " + countryId + "can not be updated, because it does not exist"));
+                        "country with id " + countryId
+                                + "can not be updated, because it does not exist"));
 
         if (name != null && !name.isEmpty() && !Objects.equals(country.getName(), name)) {
             Optional<Country> countryOptional = countryRepository.findCountryByName(name);
@@ -67,7 +68,8 @@ public class CountryService {
             country.setName(name);
         }
 
-        if (capital != null && !capital.isEmpty() && !Objects.equals(country.getCapital(), capital)) {
+        if (capital != null && !capital.isEmpty()
+                && !Objects.equals(country.getCapital(), capital)) {
             country.setCapital(capital);
         }
 
