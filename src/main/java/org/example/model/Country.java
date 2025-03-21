@@ -37,12 +37,12 @@ public class Country {
     @Column(name = "gdp")
     private Double gdp;
 
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "country_id")
     private List<City> cities;
 
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "country_nations",
             joinColumns = {@JoinColumn(name = "country_id")},
             inverseJoinColumns = {@JoinColumn(name = "nation_id")})

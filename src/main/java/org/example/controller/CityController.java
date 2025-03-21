@@ -2,8 +2,10 @@ package org.example.controller;
 
 import java.util.List;
 import org.example.model.City;
+import org.example.repository.CityRepository;
 import org.example.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,10 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class CityController {
 
     private final CityService cityService;
+    private final CityRepository cityRepository;
 
     @Autowired
-    public CityController(CityService cityService) {
+    public CityController(CityService cityService, CityRepository cityRepository) {
         this.cityService = cityService;
+        this.cityRepository = cityRepository;
     }
 
     @GetMapping(path = "cities")
@@ -44,6 +48,18 @@ public class CityController {
     @DeleteMapping(path = "countries/{countryId}/cities")
     public void deleteCitiesByCountryId(@PathVariable(value = "countryId") Long countryId) {
         cityService.deleteCitiesByCountryId(countryId);
+    }
+
+    @DeleteMapping("cities/deleteById/{id}")
+    public ResponseEntity<String> deleteById(@PathVariable(value = "id") Long id) {
+        cityService.deleteCityByCityId(id);
+        if (cityRepository.existsById(id)) {
+            return ResponseEntity.internalServerError()
+                    .body("City with id " + id + " were not deleted");
+        }
+
+        return ResponseEntity.ok().build();
+
     }
 
     @PutMapping(path = "cities/{id}")

@@ -60,6 +60,13 @@ public class CityService {
         countryRepository.save(country);
     }
 
+    public void deleteCityByCityId(Long cityId) {
+        if (!cityRepository.existsById(cityId)) {
+            throw new IllegalStateException("city with id " + cityId + " does not exists in the database.");
+        }
+        cityRepository.deleteById(cityId);
+    }
+
     @Transactional
     public void updateCity(Long cityId,
                            String name,
