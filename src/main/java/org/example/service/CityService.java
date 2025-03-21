@@ -62,7 +62,8 @@ public class CityService {
 
     public void deleteCityByCityId(Long cityId) {
         if (!cityRepository.existsById(cityId)) {
-            throw new IllegalStateException("city with id " + cityId + " does not exists in the database.");
+            throw new IllegalStateException("city with id "
+                    + cityId + " does not exists in the database.");
         }
         cityRepository.deleteById(cityId);
     }

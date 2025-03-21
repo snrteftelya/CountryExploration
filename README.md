@@ -64,3 +64,4 @@ cd CountryExploration
 ## Контакты
 Разработчик: **snrteftelya**  
 GitHub: [https://github.com/snrteftelya](https://github.com/snrteftelya)
+Sonar: [https://sonarcloud.io/project/overview?id=snrteftelya_CountryExploration](https://sonarcloud.io/project/overview?id=snrteftelya_CountryExploration)
