@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import java.util.List;
+import java.util.Set;
 import org.example.model.Country;
 import org.example.model.Nation;
 import org.example.service.NationService;
@@ -27,7 +28,7 @@ public class NationController {
     }
 
     @GetMapping("countries/{countryId}/nations")
-    public List<Nation> getNationsByCountryId(@PathVariable(value = "countryId") Long countryId) {
+    public Set<Nation> getNationsByCountryId(@PathVariable(value = "countryId") Long countryId) {
         return nationService.getNationsByCountryId(countryId);
     }
 
@@ -37,7 +38,7 @@ public class NationController {
     }
 
     @GetMapping("nations/{nationId}/countries")
-    public List<Country> getCountriesByNationId(@PathVariable(value = "nationId") Long nationId) {
+    public Set<Country> getCountriesByNationId(@PathVariable(value = "nationId") Long nationId) {
         return nationService.getCountriesByNationId(nationId);
     }
 

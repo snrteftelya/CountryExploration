@@ -11,7 +11,7 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import java.util.List;
+import java.util.Set;
 import lombok.Data;
 
 @Data
@@ -39,14 +39,12 @@ public class Country {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "country_id")
-    private List<City> cities;
+    private Set<City> cities;
 
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "country_nations",
             joinColumns = {@JoinColumn(name = "country_id")},
             inverseJoinColumns = {@JoinColumn(name = "nation_id")})
-    private List<Nation> nations;
-
-
+    private Set<Nation> nations;
 }

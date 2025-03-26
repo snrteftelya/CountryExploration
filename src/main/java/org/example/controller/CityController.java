@@ -1,11 +1,10 @@
 package org.example.controller;
 
 import java.util.List;
+import java.util.Set;
 import org.example.model.City;
-import org.example.repository.CityRepository;
 import org.example.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,12 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class CityController {
 
     private final CityService cityService;
-    private final CityRepository cityRepository;
 
     @Autowired
-    public CityController(CityService cityService, CityRepository cityRepository) {
+    public CityController(CityService cityService) {
         this.cityService = cityService;
-        this.cityRepository = cityRepository;
     }
 
     @GetMapping(path = "cities")
@@ -35,13 +32,13 @@ public class CityController {
     }
 
     @GetMapping(path = "countries/{countryId}/cities")
-    public List<City> getCitiesByCountryId(@PathVariable(value = "countryId") Long countryId) {
+    public Set<City> getCitiesByCountryId(@PathVariable(value = "countryId") Long countryId) {
         return cityService.getCitiesByCountryId(countryId);
     }
 
     @PostMapping(path = "countries/{countryId}/cities")
-    public void registerNewCityByCountryId(@PathVariable(value = "countryId")
-                                               Long countryId, @RequestBody City city) {
+    public void addNewCityByCountryId(@PathVariable(value = "countryId")
+                                          Long countryId, @RequestBody City city) {
         cityService.addNewCityByCountryId(countryId, city);
     }
 
@@ -50,16 +47,11 @@ public class CityController {
         cityService.deleteCitiesByCountryId(countryId);
     }
 
-    @DeleteMapping("cities/deleteById/{id}")
-    public ResponseEntity<String> deleteById(@PathVariable(value = "id") Long id) {
-        cityService.deleteCityByCityId(id);
-        if (cityRepository.existsById(id)) {
-            return ResponseEntity.internalServerError()
-                    .body("City with id " + id + " were not deleted");
-        }
-
-        return ResponseEntity.ok().build();
-
+    @DeleteMapping(path = "countries/{countryId}/cities/{cityId}")
+    public void deleteCityByIdFromCountryByCountryId(@PathVariable(value = "countryId")
+                                                         Long countryId,
+                                                     @PathVariable(value = "cityId") Long cityId) {
+        cityService.deleteCityByIdFromCountryByCountryId(countryId, cityId);
     }
 
     @PutMapping(path = "cities/{id}")
