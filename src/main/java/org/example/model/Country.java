@@ -1,5 +1,6 @@
 package org.example.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,13 +14,17 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.Set;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-@Data
 @Entity
 @Table(name = "country")
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(name = "name")
@@ -37,12 +42,15 @@ public class Country {
     @Column(name = "gdp")
     private Double gdp;
 
-    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL) // Link back to City
+    @JsonIgnore
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
+    @ToString.Exclude
     private Set<City> cities;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "country_nations",
             joinColumns = {@JoinColumn(name = "country_id")},
             inverseJoinColumns = {@JoinColumn(name = "nation_id")})
+    @ToString.Exclude
     private Set<Nation> nations;
 }

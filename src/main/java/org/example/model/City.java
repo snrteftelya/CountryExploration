@@ -9,13 +9,17 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-@Data
 @Entity
 @Table(name = "city")
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(name = "name")
@@ -27,7 +31,8 @@ public class City {
     @Column(name = "area")
     private Double areaSquareKm;
 
-    @ManyToOne // Establishes a many-to-one relationship
-    @JoinColumn(name = "country_id", nullable = false) // Foreign key to Country
-    private Country country; // Link to the Country entity
+    @ManyToOne
+    @JoinColumn(name = "country_id", nullable = false)
+    @ToString.Exclude
+    private Country country;
 }
