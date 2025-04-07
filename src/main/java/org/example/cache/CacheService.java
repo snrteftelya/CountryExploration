@@ -6,6 +6,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,8 +18,11 @@ public class CacheService {
     private final long defaultTtlMillis;
     private final int maxSize;
 
-    public CacheService() {
-        this(1000, 30, TimeUnit.MINUTES); // Default values
+    @Autowired
+    public CacheService(
+            @Value("${cache.max.size:1000}") int maxSize,
+            @Value("${cache.ttl.minutes:30}") long ttl) {
+        this(maxSize, ttl, TimeUnit.MINUTES);
     }
 
     public CacheService(int maxSize, long ttl, TimeUnit timeUnit) {
