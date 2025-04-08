@@ -52,5 +52,6 @@ public class Country {
             joinColumns = {@JoinColumn(name = "country_id")},
             inverseJoinColumns = {@JoinColumn(name = "nation_id")})
     @ToString.Exclude
+    @JsonIgnore
     private Set<Nation> nations;
 }

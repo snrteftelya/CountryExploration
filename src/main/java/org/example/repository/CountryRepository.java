@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CountryRepository extends JpaRepository<Country, Long> {
 
-    @Query(value = "SELECT * FROM Country WHERE name = ?1", nativeQuery = true)
-    Optional<Country> findCountryByName(String name);
+    @Query("SELECT c FROM Country c WHERE c.name = :name")
+    Optional<Country> findCountryByName(@Param("name") String name);
 
     @Query("SELECT DISTINCT c FROM Country c LEFT JOIN FETCH c.cities city"
             + " WHERE :cityId IN (SELECT ct.id FROM Country c2 JOIN c2.cities ct WHERE c2 = c)")

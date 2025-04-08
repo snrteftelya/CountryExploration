@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.example.cache.CacheService;
 import org.example.model.Country;
 import org.example.repository.CountryRepository;
+import org.hibernate.Hibernate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -34,14 +35,18 @@ public class CountryService {
         }
     }
 
+    @Transactional
     public Country getCountryById(Long countryId) {
-        if (cacheService.containsKey(COUNTRY_ID + countryId)) {
-            return (Country) cacheService.get(COUNTRY_ID + countryId);
+        String key = COUNTRY_ID + countryId;
+        if (cacheService.containsKey(key)) {
+            return (Country) cacheService.get(key);
         } else {
             Country country = countryRepository.findCountryWithCitiesAndNationsById(countryId)
-                    .orElseThrow(() -> new IllegalStateException(
-                            "country with id " + countryId + "does not exist"));
-            cacheService.put(COUNTRY_ID + countryId, country);
+                    .orElseThrow(() -> new IllegalStateException("country with id "
+                            + countryId + " does not exist"));
+            Hibernate.initialize(country.getCities());
+            Hibernate.initialize(country.getNations());
+            cacheService.put(key, country);
             return country;
         }
     }
