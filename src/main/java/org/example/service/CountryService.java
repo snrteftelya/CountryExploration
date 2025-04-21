@@ -10,6 +10,8 @@ import org.example.cache.CacheService;
 import org.example.model.Country;
 import org.example.repository.CountryRepository;
 import org.hibernate.Hibernate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -23,27 +25,32 @@ public class CountryService {
 
     private static final String ALL_COUNTRIES = "allCountries";
     private static final String COUNTRY_ID = "countryId_";
+    private static final Logger logger = LoggerFactory.getLogger(CacheService.class);
 
 
     public List<Country> getCountries() {
         if (cacheService.containsKey(ALL_COUNTRIES)) {
-            return (List<Country>) cacheService.get(ALL_COUNTRIES);
+            @SuppressWarnings("unchecked")
+            List<Country> countries = (List<Country>) cacheService.get(ALL_COUNTRIES);
+            logger.debug("Retrieved from cache allCountries: {}", countries);
+            return countries;
         } else {
             List<Country> countries = countryRepository.findAllWithCitiesAndNations();
+            logger.debug("Putting into cache allCountries: {}", countries);
             cacheService.put(ALL_COUNTRIES, countries);
             return countries;
         }
     }
 
     @Transactional
-    public Country getCountryById(Long countryId) {
-        String key = COUNTRY_ID + countryId;
+    public Country getCountryByName(String name) {
+        String key = name;
         if (cacheService.containsKey(key)) {
             return (Country) cacheService.get(key);
         } else {
-            Country country = countryRepository.findCountryWithCitiesAndNationsById(countryId)
-                    .orElseThrow(() -> new IllegalStateException("country with id "
-                            + countryId + " does not exist"));
+            Country country = countryRepository.findCountryWithCitiesAndNationsByName(name)
+                    .orElseThrow(() -> new IllegalStateException("country with name "
+                            + name + " does not exist"));
             Hibernate.initialize(country.getCities());
             Hibernate.initialize(country.getNations());
             cacheService.put(key, country);

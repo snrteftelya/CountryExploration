@@ -11,6 +11,8 @@ import org.example.model.City;
 import org.example.model.Country;
 import org.example.repository.CityRepository;
 import org.example.repository.CountryRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,7 @@ public class CityService {
 
     private static final String ALL_CITIES_BY_COUNTRY_ID = "allCitiesByCountryId_";
     private static final String ALL_CITIES = "allCities";
+    private static final Logger logger = LoggerFactory.getLogger(CacheService.class);
 
     private void updateCache(Country country) {
         if (cacheService.containsKey(ALL_CITIES_BY_COUNTRY_ID + country.getId())) {
@@ -45,9 +48,13 @@ public class CityService {
 
     public List<City> getCities() {
         if (cacheService.containsKey(ALL_CITIES)) {
-            return (List<City>) cacheService.get(ALL_CITIES);
+            @SuppressWarnings("unchecked")
+            List<City> cities = (List<City>) cacheService.get(ALL_CITIES);
+            logger.debug("Retrieved from cache allCities: {}", cities);
+            return cities;
         } else {
             List<City> cities = cityRepository.findAll();
+            logger.debug("Putting into cache allCities: {}", cities);
             cacheService.put(ALL_CITIES, cities, citiesCacheTtl);
             return cities;
         }
@@ -55,13 +62,17 @@ public class CityService {
 
     public Set<City> getCitiesByCountryId(Long countryId) {
         if (cacheService.containsKey(ALL_CITIES_BY_COUNTRY_ID + countryId)) {
-            return (Set<City>) cacheService.get(ALL_CITIES_BY_COUNTRY_ID + countryId);
+            @SuppressWarnings("unchecked")
+            Set<City> cities = (Set<City>) cacheService.get(ALL_CITIES_BY_COUNTRY_ID + countryId);
+            logger.debug("Retrieved from cache allCitiesById: {}", cities);
+            return cities;
         } else {
             Country country = countryRepository.findCountryWithCitiesById(countryId)
                     .orElseThrow(() -> new IllegalStateException(
                             "country with id " + countryId + " does not exist,"
                                     + " that's why you can't view cities from it"));
             Set<City> cities = country.getCities();
+            logger.debug("Putting into cache allCitiesById: {}", cities);
             cacheService.put(ALL_CITIES_BY_COUNTRY_ID + countryId, cities, citiesCacheTtl);
             return cities;
         }

@@ -25,8 +25,8 @@ public interface CountryRepository extends JpaRepository<Country, Long> {
     List<Country> findAllWithCities();
 
     @Query("SELECT DISTINCT c FROM Country c LEFT JOIN FETCH c.nations"
-            + " LEFT JOIN FETCH c.cities WHERE c.id = :id")
-    Optional<Country> findCountryWithCitiesAndNationsById(@Param("id") Long id);
+            + " LEFT JOIN FETCH c.cities WHERE c.name = :name")
+    Optional<Country> findCountryWithCitiesAndNationsByName(@Param("name") String name);
 
     @Query("SELECT DISTINCT c FROM Country c LEFT JOIN FETCH c.nations WHERE c.id = :id")
     Optional<Country> findCountryWithNationsById(@Param("id") Long id);

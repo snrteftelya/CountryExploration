@@ -30,9 +30,9 @@ public class CountryController {
         return countryService.getCountries();
     }
 
-    @GetMapping(path = "{id}")
-    public Country getCountryById(@PathVariable("id") Long countryId) {
-        return countryService.getCountryById(countryId);
+    @GetMapping(path = "{name}")
+    public Country getCountryByName(@PathVariable("name") String name) {
+        return countryService.getCountryByName(name);
     }
 
     @PostMapping

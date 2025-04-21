@@ -97,7 +97,6 @@ public class CityController {
             );
         }
 
-        // Основные метрики
         double totalPopulation = cities.stream()
                 .mapToDouble(City::getPopulation)
                 .sum();
@@ -111,7 +110,6 @@ public class CityController {
                 .max(Comparator.comparingDouble(City::getPopulation))
                 .orElseThrow();
 
-        // Распределение по размерам
         Map<String, Long> citySizeDistribution = cities.stream()
                 .collect(Collectors.groupingBy(
                         city -> {
