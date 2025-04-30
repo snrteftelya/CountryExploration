@@ -1,0 +1,1088 @@
+2025-04-30 02:47:54 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 02:47:54 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 6630 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 02:47:54 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 02:47:54 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 02:47:54 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2025-04-30 02:47:54 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 02:47:54 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 02:47:54 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 02:47:54 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 02:47:54 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 02:47:54 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 768 ms
+2025-04-30 02:47:55 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 02:47:55 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 02:47:55 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 02:47:55 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 02:47:55 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 02:47:56 | ERROR | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+2025-04-30 02:47:56 | WARN  | o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
+2025-04-30 02:47:56 | ERROR | o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-04-30 02:47:56 | WARN  | o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-04-30 02:47:56 | INFO  | o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-30 02:47:56 | INFO  | o.s.b.a.l.ConditionEvaluationReportLogger - 
+2025-04-30 02:47:56 | ERROR | o.s.boot.SpringApplication - Application run failed
+2025-04-30 02:48:10 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 02:48:10 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 6841 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 02:48:10 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 02:48:10 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 02:48:10 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
+2025-04-30 02:48:10 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 02:48:10 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 02:48:10 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 02:48:10 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 02:48:10 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 02:48:10 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 831 ms
+2025-04-30 02:48:11 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 02:48:11 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 02:48:11 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 02:48:11 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 02:48:11 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 02:48:11 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7cdc4070
+2025-04-30 02:48:11 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 02:48:11 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 02:48:11 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 02:48:11 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 02:48:12 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 02:48:13 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 02:48:13 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 02:48:13 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.61 seconds (process running for 4.055)
+2025-04-30 02:48:35 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 02:48:35 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 02:48:35 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-04-30 02:48:35 | INFO  | o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 293 ms
+2025-04-30 02:48:52 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-30,*/*
+2025-04-30 02:48:52 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
+2025-04-30 02:48:52 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
+2025-04-30 02:48:52 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 02:49:58 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-30,*/*
+2025-04-30 02:49:58 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
+2025-04-30 02:49:58 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
+2025-04-30 02:49:58 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 02:50:28 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCities(String,Long)), args=
+2025-04-30 02:50:28 | WARN  | o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 42883
+2025-04-30 02:50:28 | ERROR | o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: function lower(bytea) does not exist
+2025-04-30 02:50:28 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.SearchController.searchCities(String,Long)), exception: JDBC exception executing SQL [select c1_0.id,c1_0.area,c1_0.country_id,c1_0.name,c1_0.population from city c1_0 where (? is null or lower(c1_0.name) like lower(('%'||?||'%')) escape '') and (? is null or c1_0.country_id=?)] [ERROR: function lower(bytea) does not exist
+2025-04-30 02:50:28 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCities(String,Long))
+2025-04-30 02:50:28 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 02:50:29 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCities(String,Long)), args=
+2025-04-30 02:50:29 | WARN  | o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 42883
+2025-04-30 02:50:29 | ERROR | o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: function lower(bytea) does not exist
+2025-04-30 02:50:29 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.SearchController.searchCities(String,Long)), exception: JDBC exception executing SQL [select c1_0.id,c1_0.area,c1_0.country_id,c1_0.name,c1_0.population from city c1_0 where (? is null or lower(c1_0.name) like lower(('%'||?||'%')) escape '') and (? is null or c1_0.country_id=?)] [ERROR: function lower(bytea) does not exist
+2025-04-30 02:50:29 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCities(String,Long))
+2025-04-30 02:50:29 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-04-30 02:50:31 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCities(String,Long)), args=
+2025-04-30 02:50:31 | WARN  | o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 42883
+2025-04-30 02:50:31 | ERROR | o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: function lower(bytea) does not exist
+2025-04-30 02:50:31 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.SearchController.searchCities(String,Long)), exception: JDBC exception executing SQL [select c1_0.id,c1_0.area,c1_0.country_id,c1_0.name,c1_0.population from city c1_0 where (? is null or lower(c1_0.name) like lower(('%'||?||'%')) escape '') and (? is null or c1_0.country_id=?)] [ERROR: function lower(bytea) does not exist
+2025-04-30 02:50:31 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCities(String,Long))
+2025-04-30 02:50:31 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-04-30 03:05:32 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 03:05:32 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:05:32 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 03:05:32 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 03:05:35 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 03:05:35 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 7638 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 03:05:35 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 03:05:35 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 03:05:35 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
+2025-04-30 03:05:35 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 03:05:35 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:05:35 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 03:05:35 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 03:05:35 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 03:05:35 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 834 ms
+2025-04-30 03:05:36 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 03:05:36 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 03:05:36 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 03:05:36 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 03:05:36 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 03:05:36 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f5f5bc9
+2025-04-30 03:05:36 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 03:05:36 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 03:05:36 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:05:36 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 03:05:37 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 03:05:38 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:05:38 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 03:05:38 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.363 seconds (process running for 3.765)
+2025-04-30 03:05:41 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 03:05:41 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 03:05:41 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 03:05:41 | INFO  | o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 230 ms
+2025-04-30 03:05:59 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 03:05:59 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 03:05:59 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 03:05:59 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 03:05:59 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 03:06:14 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String)), args=Berlin
+2025-04-30 03:06:14 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:14 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:14 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 03:06:33 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String)), args=Hamburg
+2025-04-30 03:06:33 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:33 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:33 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 03:06:39 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String)), args=Hambur
+2025-04-30 03:06:39 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:39 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:39 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-04-30 03:06:44 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String)), args=Hambur
+2025-04-30 03:06:44 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:44 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:44 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-04-30 03:06:47 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String)), args=Hamburd
+2025-04-30 03:06:47 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:47 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:47 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 6
+2025-04-30 03:06:55 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String)), args=H
+2025-04-30 03:06:55 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:55 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:06:55 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 7
+2025-04-30 03:07:10 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-30,*/*
+2025-04-30 03:07:10 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
+2025-04-30 03:07:10 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
+2025-04-30 03:07:10 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 8
+2025-04-30 03:14:36 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String)), args=
+2025-04-30 03:14:36 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:14:36 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-04-30 03:14:36 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 9
+2025-04-30 03:15:55 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 03:15:55 | INFO  | org.example.service.CityService - Getting cities from cache
+2025-04-30 03:15:55 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 03:15:55 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 03:15:55 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 10
+2025-04-30 03:16:10 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 03:16:10 | INFO  | org.example.service.CityService - Getting cities from cache
+2025-04-30 03:16:10 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 03:16:10 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 03:16:10 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 11
+2025-04-30 03:19:03 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-04-30 03:19:03 | INFO  | org.example.service.CountryService - 🔄 Fetched 1 countries from DB and cached
+2025-04-30 03:19:03 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-04-30 03:19:03 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-04-30 03:19:03 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 12
+2025-04-30 03:19:19 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-04-30 03:19:19 | INFO  | org.example.service.CountryService - ✅ Retrieved 1 countries from cache
+2025-04-30 03:19:19 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-04-30 03:19:19 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-04-30 03:19:19 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 13
+2025-04-30 03:28:55 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 03:28:55 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:28:55 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 03:28:55 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 03:28:57 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 03:28:57 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 8244 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 03:28:57 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 03:28:58 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 03:28:58 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2025-04-30 03:28:58 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 03:28:58 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:28:58 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 03:28:58 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 03:28:58 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 03:28:58 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 742 ms
+2025-04-30 03:28:58 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 03:28:58 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 03:28:58 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 03:28:58 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 03:28:58 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 03:28:58 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4aeaff64
+2025-04-30 03:28:58 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 03:28:59 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 03:28:59 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:28:59 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 03:28:59 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 03:29:00 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:29:00 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 03:29:00 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.134 seconds (process running for 3.492)
+2025-04-30 03:29:29 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 03:29:29 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 03:29:29 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 03:29:29 | INFO  | o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 248 ms
+2025-04-30 03:29:44 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=1
+2025-04-30 03:29:44 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:29:44 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:29:44 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 03:29:53 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=6
+2025-04-30 03:29:53 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), exception: country with id 6 doesn't exist, that's why you can't view cities from its
+2025-04-30 03:29:53 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:29:53 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 03:30:01 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=5
+2025-04-30 03:30:01 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), exception: country with id 5 doesn't exist, that's why you can't view cities from its
+2025-04-30 03:30:01 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:30:01 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 03:30:24 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=5
+2025-04-30 03:30:24 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), exception: country with id 5 doesn't exist, that's why you can't view cities from its
+2025-04-30 03:30:24 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:30:24 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-04-30 03:30:27 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=6
+2025-04-30 03:30:27 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), exception: country with id 6 doesn't exist, that's why you can't view cities from its
+2025-04-30 03:30:27 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:30:27 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-04-30 03:30:30 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=1
+2025-04-30 03:30:30 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:30:30 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:30:30 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 6
+2025-04-30 03:31:21 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-04-30 03:31:21 | INFO  | org.example.service.CountryService - 🔄 Fetched 1 countries from DB and cached
+2025-04-30 03:31:21 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-04-30 03:31:21 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-04-30 03:31:21 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 7
+2025-04-30 03:37:05 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:37:05 | WARN  | o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23502
+2025-04-30 03:37:05 | ERROR | o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: null value in column "country_id" of relation "city" violates not-null constraint
+2025-04-30 03:37:05 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), exception: could not execute statement [ERROR: null value in column "country_id" of relation "city" violates not-null constraint
+2025-04-30 03:37:05 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 03:37:05 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 8
+2025-04-30 03:38:48 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 03:38:48 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 03:38:48 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 03:38:48 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 03:38:48 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 9
+2025-04-30 03:38:58 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=1
+2025-04-30 03:38:58 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:38:58 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:38:58 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 10
+2025-04-30 03:39:52 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=1
+2025-04-30 03:39:52 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:39:52 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 03:39:52 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 11
+2025-04-30 03:41:38 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 03:41:38 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:41:38 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 03:41:38 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 03:41:40 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 03:41:40 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 8574 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 03:41:40 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 03:41:41 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 03:41:41 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
+2025-04-30 03:41:41 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 03:41:41 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:41:41 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 03:41:41 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 03:41:41 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 03:41:41 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 758 ms
+2025-04-30 03:41:41 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 03:41:41 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 03:41:41 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 03:41:41 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 03:41:41 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 03:41:41 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@93ce24d
+2025-04-30 03:41:41 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 03:41:42 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 03:41:42 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:41:42 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 03:41:42 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 03:41:43 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:41:43 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 03:41:43 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.109 seconds (process running for 3.453)
+2025-04-30 03:42:00 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 03:42:00 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 03:42:00 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 03:42:00 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:42:01 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:42:01 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 03:42:01 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 03:46:12 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 03:46:12 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:46:12 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 03:46:12 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 03:46:14 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 03:46:14 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 8714 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 03:46:14 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 03:46:15 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 03:46:15 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2025-04-30 03:46:15 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 03:46:15 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:46:15 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 03:46:15 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 03:46:15 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 03:46:15 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 756 ms
+2025-04-30 03:46:15 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 03:46:15 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 03:46:15 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 03:46:15 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 03:46:15 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 03:46:15 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@545604a9
+2025-04-30 03:46:15 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 03:46:16 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 03:46:16 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:46:16 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 03:46:16 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 03:46:17 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:46:17 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 03:46:17 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.187 seconds (process running for 3.537)
+2025-04-30 03:46:19 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 03:46:19 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 03:46:19 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 03:46:19 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:46:19 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:46:19 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 03:46:19 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 03:46:22 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:46:22 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:46:22 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 03:46:22 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 03:46:23 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:46:23 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:46:23 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 03:46:23 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 03:46:24 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:46:24 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:46:24 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 03:46:24 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-04-30 03:46:25 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:46:25 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:46:25 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 03:46:25 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-04-30 03:46:25 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:46:25 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:46:25 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 03:46:25 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 6
+2025-04-30 03:52:20 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 03:52:20 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:52:20 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 03:52:20 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 03:52:39 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 03:52:39 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 8929 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 03:52:39 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 03:52:39 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 03:52:39 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2025-04-30 03:52:39 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 03:52:39 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:52:39 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 03:52:39 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 03:52:40 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 03:52:40 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 755 ms
+2025-04-30 03:52:40 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 03:52:40 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 03:52:40 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 03:52:40 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 03:52:40 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 03:52:40 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1f60824e
+2025-04-30 03:52:40 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 03:52:40 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 03:52:40 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:52:40 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 03:52:41 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 03:52:42 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:52:42 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 03:52:42 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.192 seconds (process running for 3.531)
+2025-04-30 03:52:45 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 03:52:45 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 03:52:45 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 03:52:45 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:52:45 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:52:45 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 03:52:45 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 03:52:50 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:52:50 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:52:50 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 03:52:50 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 03:52:57 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:52:57 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:52:57 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 03:52:57 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 03:57:50 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 03:57:50 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:57:50 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 03:57:50 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 03:57:53 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 03:57:53 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 9084 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 03:57:53 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 03:57:53 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 03:57:53 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
+2025-04-30 03:57:53 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 03:57:53 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:57:53 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 03:57:53 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 03:57:53 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 03:57:53 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 768 ms
+2025-04-30 03:57:53 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 03:57:53 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 03:57:53 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 03:57:54 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 03:57:54 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 03:57:54 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f5f5bc9
+2025-04-30 03:57:54 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 03:57:54 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 03:57:54 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 03:57:54 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 03:57:54 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 03:57:56 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 03:57:56 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 03:57:56 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.142 seconds (process running for 3.489)
+2025-04-30 03:57:58 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 03:57:58 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 03:57:58 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 03:57:58 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:57:58 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:57:58 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 03:57:58 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 03:58:00 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:58:00 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:58:00 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 03:58:00 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 03:59:51 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 03:59:51 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 03:59:51 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 03:59:51 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 04:09:29 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 04:09:29 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:09:29 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 04:09:29 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 04:09:31 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 04:09:31 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 9514 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 04:09:31 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 04:09:31 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 04:09:31 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2025-04-30 04:09:32 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 04:09:32 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:09:32 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 04:09:32 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 04:09:32 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 04:09:32 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 753 ms
+2025-04-30 04:09:32 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 04:09:32 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 04:09:32 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 04:09:32 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 04:09:32 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 04:09:32 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1dbff71c
+2025-04-30 04:09:32 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 04:09:32 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 04:09:33 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:09:33 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 04:09:33 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 04:09:34 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:09:34 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 04:09:34 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.173 seconds (process running for 3.528)
+2025-04-30 04:09:34 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 04:09:34 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 04:09:34 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 04:09:34 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:34 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:34 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:34 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 04:09:37 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:37 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:37 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:37 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 04:09:38 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:38 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:38 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:38 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 04:09:39 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:39 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:39 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:39 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-04-30 04:09:39 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:39 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:39 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:39 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-04-30 04:09:40 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:40 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:40 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:40 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 6
+2025-04-30 04:09:40 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:40 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:40 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:40 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 7
+2025-04-30 04:09:41 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:41 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:41 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:41 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 8
+2025-04-30 04:09:41 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:41 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:41 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:41 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 9
+2025-04-30 04:09:41 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:41 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:41 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:41 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 10
+2025-04-30 04:09:42 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:09:42 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addCity(Long,City)), exception: java.lang.StackOverflowError
+2025-04-30 04:09:42 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addCity(Long,City))
+2025-04-30 04:09:42 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 11
+2025-04-30 04:11:43 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 04:11:43 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:11:43 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 04:11:43 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 04:11:45 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 04:11:45 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 9574 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 04:11:45 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 04:11:46 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 04:11:46 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 3 JPA repository interfaces.
+2025-04-30 04:11:46 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 04:11:46 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:11:46 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 04:11:46 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 04:11:46 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 04:11:46 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 881 ms
+2025-04-30 04:11:46 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 04:11:46 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 04:11:46 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 04:11:46 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 04:11:46 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 04:11:47 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7cdc4070
+2025-04-30 04:11:47 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 04:11:47 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 04:11:47 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:11:47 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 04:11:47 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 04:11:48 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:11:48 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 04:11:48 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.387 seconds (process running for 3.737)
+2025-04-30 04:11:50 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 04:11:50 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 04:11:50 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 04:11:50 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:11:50 | WARN  | o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23502
+2025-04-30 04:11:50 | ERROR | o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: null value in column "country_id" of relation "city" violates not-null constraint
+2025-04-30 04:11:50 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), exception: could not execute statement [ERROR: null value in column "country_id" of relation "city" violates not-null constraint
+2025-04-30 04:11:50 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:11:50 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 04:15:20 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 04:15:20 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:15:20 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 04:15:20 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 04:15:22 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 04:15:22 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 9673 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 04:15:22 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 04:15:23 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 04:15:23 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2025-04-30 04:15:23 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 04:15:23 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:15:23 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 04:15:23 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 04:15:23 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 04:15:23 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 765 ms
+2025-04-30 04:15:23 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 04:15:23 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 04:15:23 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 04:15:23 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 04:15:23 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 04:15:23 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@121cf6f4
+2025-04-30 04:15:23 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 04:15:24 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 04:15:24 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:15:24 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 04:15:24 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 04:15:25 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:15:25 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 04:15:25 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.168 seconds (process running for 3.505)
+2025-04-30 04:15:26 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 04:15:26 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 04:15:26 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 04:15:26 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:15:26 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 34) to country 'Germany' (ID: 1)
+2025-04-30 04:15:26 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). 
+2025-04-30 04:15:26 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:15:26 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 04:15:29 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:15:29 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 35) to country 'Germany' (ID: 1)
+2025-04-30 04:15:29 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). 
+2025-04-30 04:15:29 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:15:29 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 04:15:30 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:15:30 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 36) to country 'Germany' (ID: 1)
+2025-04-30 04:15:30 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). 
+2025-04-30 04:15:30 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:15:30 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 04:15:52 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 04:15:52 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:15:52 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 04:15:52 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 04:15:53 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 04:15:53 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 9686 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 04:15:53 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 04:15:53 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 04:15:53 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 3 JPA repository interfaces.
+2025-04-30 04:15:54 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 04:15:54 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:15:54 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 04:15:54 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 04:15:54 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 04:15:54 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 724 ms
+2025-04-30 04:15:54 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 04:15:54 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 04:15:54 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 04:15:54 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 04:15:54 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 04:15:54 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@403f7aa2
+2025-04-30 04:15:54 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 04:15:55 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 04:15:55 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:15:55 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 04:15:55 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 04:15:56 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:15:56 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 04:15:56 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.17 seconds (process running for 3.597)
+2025-04-30 04:16:00 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 04:16:00 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 04:16:00 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-04-30 04:16:00 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:16:00 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:16:00 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:16:00 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:16:00 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 04:16:09 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:16:09 | INFO  | org.example.service.CityService - Getting cities from cache
+2025-04-30 04:16:09 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:16:09 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:16:09 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 04:16:23 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:16:23 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 37) to country 'Germany' (ID: 1)
+2025-04-30 04:16:23 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). 
+2025-04-30 04:16:23 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:16:23 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 04:17:02 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:17:02 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 38) to country 'Germany' (ID: 1)
+2025-04-30 04:17:02 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). 
+2025-04-30 04:17:02 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:17:02 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-04-30 04:17:50 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:17:50 | INFO  | org.example.service.CityService - Getting cities from cache
+2025-04-30 04:17:50 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:17:50 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:17:50 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-04-30 04:19:00 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 04:19:00 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:19:00 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 04:19:00 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 04:19:02 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 04:19:02 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 9774 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 04:19:02 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 04:19:02 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 04:19:02 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2025-04-30 04:19:03 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 04:19:03 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:19:03 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 04:19:03 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 04:19:03 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 04:19:03 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 748 ms
+2025-04-30 04:19:03 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 04:19:03 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 04:19:03 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 04:19:03 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 04:19:03 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 04:19:03 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7cdc4070
+2025-04-30 04:19:03 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 04:19:04 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 04:19:04 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:19:04 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 04:19:04 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 04:19:05 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:19:05 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 04:19:05 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.147 seconds (process running for 3.499)
+2025-04-30 04:19:07 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 04:19:07 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 04:19:07 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 04:19:07 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:19:07 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 39) to country 'Germany' (ID: 1)
+2025-04-30 04:19:07 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). 
+2025-04-30 04:19:07 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:19:07 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:19:07 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 04:19:17 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:19:17 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 40) to country 'Germany' (ID: 1)
+2025-04-30 04:19:17 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). 
+2025-04-30 04:19:17 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:19:17 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:19:17 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 04:19:38 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:19:38 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:19:38 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:19:38 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:19:38 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 04:22:08 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.updateCity(Long,String,Double,Double)), args=40,Mogilev,225.0,112.0
+2025-04-30 04:22:08 | INFO  | org.example.service.CityService - ✏️ Updated city 'Minsk' (ID: 40). New name: 'Mogilev', population: 225.0, area: 112.0 km²
+2025-04-30 04:22:08 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). 
+2025-04-30 04:22:08 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.updateCity(Long,String,Double,Double))
+2025-04-30 04:22:08 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.updateCity(Long,String,Double,Double))
+2025-04-30 04:22:08 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-04-30 04:22:14 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:22:14 | INFO  | org.example.service.CityService - Getting cities from cache
+2025-04-30 04:22:14 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:22:14 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:22:14 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-04-30 04:23:07 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=1
+2025-04-30 04:23:07 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 04:23:07 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 04:23:07 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 6
+2025-04-30 04:23:22 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=1
+2025-04-30 04:23:22 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 04:23:22 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 04:23:22 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 7
+2025-04-30 04:23:50 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:23:50 | INFO  | org.example.service.CityService - Getting cities from cache
+2025-04-30 04:23:50 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:23:50 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:23:50 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 8
+2025-04-30 04:30:22 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 04:30:22 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:30:22 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 04:30:22 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 04:30:24 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 04:30:24 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 10058 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 04:30:24 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 04:30:25 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 04:30:25 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2025-04-30 04:30:25 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 04:30:25 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:30:25 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 04:30:25 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 04:30:25 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 04:30:25 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 742 ms
+2025-04-30 04:30:25 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 04:30:25 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 04:30:25 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 04:30:25 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 04:30:25 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 04:30:25 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27dfd12b
+2025-04-30 04:30:25 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 04:30:26 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 04:30:26 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:30:26 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 04:30:26 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 04:30:27 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:30:27 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 04:30:27 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.106 seconds (process running for 3.503)
+2025-04-30 04:30:29 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 04:30:29 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 04:30:29 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 04:30:29 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.updateCity(Long,String,Double,Double)), args=40,Mogilev,225.0,113.0
+2025-04-30 04:30:29 | INFO  | org.example.service.CityService - ✏️ Updated city 'Mogilev' (ID: 40). New name: 'Mogilev', population: 225.0, area: 113.0 km²
+2025-04-30 04:30:29 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). 
+2025-04-30 04:30:29 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.updateCity(Long,String,Double,Double))
+2025-04-30 04:30:29 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.updateCity(Long,String,Double,Double))
+2025-04-30 04:30:29 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 04:30:36 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:30:36 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:30:36 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:30:36 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:30:36 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 04:31:43 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.deleteCityByIdFromCountryByCountryId(Long,Long)), args=1,40
+2025-04-30 04:31:43 | INFO  | org.example.service.CityService - 🗑️ Deleting city 'Mogilev' (ID: 40) from country 'Germany' (ID: 1)
+2025-04-30 04:31:43 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). Action: DELETE city 'Mogilev' (ID: 40)
+2025-04-30 04:31:43 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.deleteCityByIdFromCountryByCountryId(Long,Long))
+2025-04-30 04:31:43 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.deleteCityByIdFromCountryByCountryId(Long,Long))
+2025-04-30 04:31:43 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 04:31:54 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:31:54 | INFO  | org.example.service.CityService - Getting cities from cache
+2025-04-30 04:31:54 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:31:54 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:31:54 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-04-30 04:32:16 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 04:32:16 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:32:16 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 04:32:16 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 04:32:18 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 04:32:18 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 10102 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 04:32:18 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 04:32:18 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 04:32:18 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 3 JPA repository interfaces.
+2025-04-30 04:32:18 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 04:32:18 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:32:18 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 04:32:18 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 04:32:19 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 04:32:19 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 727 ms
+2025-04-30 04:32:19 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 04:32:19 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 04:32:19 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 04:32:19 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 04:32:19 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 04:32:19 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1171ba7e
+2025-04-30 04:32:19 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 04:32:19 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 04:32:19 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:32:19 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 04:32:20 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 04:32:21 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:32:21 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 04:32:21 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.095 seconds (process running for 3.512)
+2025-04-30 04:32:21 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 04:32:21 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 04:32:21 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 04:32:21 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:32:21 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:32:21 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:32:21 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:32:21 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 04:38:18 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 04:38:18 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:38:18 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 04:38:18 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 04:38:20 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 04:38:20 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 10253 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 04:38:20 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 04:38:20 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 04:38:20 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2025-04-30 04:38:20 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 04:38:20 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:38:20 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 04:38:20 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 04:38:20 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 04:38:20 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 716 ms
+2025-04-30 04:38:20 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 04:38:20 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 04:38:20 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 04:38:21 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 04:38:21 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 04:38:21 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f5f5bc9
+2025-04-30 04:38:21 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 04:38:21 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 04:38:21 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:38:21 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 04:38:21 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 04:38:23 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:38:23 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 04:38:23 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.096 seconds (process running for 3.443)
+2025-04-30 04:38:23 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 04:38:23 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 04:38:23 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 04:38:23 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.deleteCityByIdFromCountryByCountryId(Long,Long)), args=1,40
+2025-04-30 04:38:23 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CityController.deleteCityByIdFromCountryByCountryId(Long,Long)), exception: City not found
+2025-04-30 04:38:23 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.deleteCityByIdFromCountryByCountryId(Long,Long))
+2025-04-30 04:38:23 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 04:38:40 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.deleteCityByIdFromCountryByCountryId(Long,Long)), args=1,39
+2025-04-30 04:38:40 | INFO  | org.example.service.CityService - 🗑️ Deleting city 'Minsk' (ID: 39)
+2025-04-30 04:38:40 | INFO  | org.example.service.CityService - ✅ City 'Minsk' (ID: 39) deleted and cache invalidated
+2025-04-30 04:38:40 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.deleteCityByIdFromCountryByCountryId(Long,Long))
+2025-04-30 04:38:40 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.deleteCityByIdFromCountryByCountryId(Long,Long))
+2025-04-30 04:38:40 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-04-30 04:38:51 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:38:51 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:38:51 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:38:51 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:38:51 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-04-30 04:39:16 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City)), args=1,City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)
+2025-04-30 04:39:16 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 41) to country 'Germany' (ID: 1)
+2025-04-30 04:39:16 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). Action: ADD
+2025-04-30 04:39:16 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:39:16 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCityByCountryId(Long,City))
+2025-04-30 04:39:16 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-04-30 04:39:27 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:39:27 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:39:27 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:39:27 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:39:27 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-04-30 04:39:48 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.updateCity(Long,String,Double,Double)), args=41,Mogilev,225.0,113.0
+2025-04-30 04:39:48 | INFO  | org.example.service.CityService - ✏️ Updated city 'Minsk' (ID: 41). New name: 'Mogilev', population: 225.0, area: 113.0 km²
+2025-04-30 04:39:48 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). Action: UPDATE
+2025-04-30 04:39:48 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.updateCity(Long,String,Double,Double))
+2025-04-30 04:39:48 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.updateCity(Long,String,Double,Double))
+2025-04-30 04:39:48 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 6
+2025-04-30 04:39:56 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:39:56 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:39:56 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:39:56 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:39:56 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 7
+2025-04-30 04:40:33 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=1
+2025-04-30 04:40:33 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 04:40:33 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 04:40:33 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 8
+2025-04-30 04:42:11 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCitiesByCountryId(Long,List)), args=1,[City(id=null, name=Minsk, population=2000000.0, areaSquareKm=50000.0, country=null)]
+2025-04-30 04:42:11 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 42) to country 'Germany' (ID: 1)
+2025-04-30 04:42:11 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 1). Action: ADD
+2025-04-30 04:42:11 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.addNewCitiesByCountryId(Long,List))
+2025-04-30 04:42:11 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCitiesByCountryId(Long,List))
+2025-04-30 04:42:11 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 9
+2025-04-30 04:42:21 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:42:21 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:42:21 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:42:21 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:42:21 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 10
+2025-04-30 04:42:45 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.deleteCitiesByCountryId(Long)), args=1
+2025-04-30 04:42:45 | INFO  | org.example.service.CityService - 🗑️ Deleting 0 cities from country 'Germany'
+2025-04-30 04:42:45 | INFO  | org.example.service.CityService - ✅ All cities deleted from country 'Germany'. Cache invalidated
+2025-04-30 04:42:45 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.deleteCitiesByCountryId(Long))
+2025-04-30 04:42:45 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.deleteCitiesByCountryId(Long))
+2025-04-30 04:42:45 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 11
+2025-04-30 04:42:55 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:42:55 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:42:55 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:42:55 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:42:55 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 12
+2025-04-30 04:43:08 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.deleteCitiesByCountryId(Long)), args=1
+2025-04-30 04:43:08 | INFO  | org.example.service.CityService - 🗑️ Deleting 0 cities from country 'Germany'
+2025-04-30 04:43:08 | INFO  | org.example.service.CityService - ✅ All cities deleted from country 'Germany'. Cache invalidated
+2025-04-30 04:43:08 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.deleteCitiesByCountryId(Long))
+2025-04-30 04:43:08 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.deleteCitiesByCountryId(Long))
+2025-04-30 04:43:08 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 13
+2025-04-30 04:43:14 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.deleteCitiesByCountryId(Long)), args=1
+2025-04-30 04:43:14 | INFO  | org.example.service.CityService - 🗑️ Deleting 0 cities from country 'Germany'
+2025-04-30 04:43:14 | INFO  | org.example.service.CityService - ✅ All cities deleted from country 'Germany'. Cache invalidated
+2025-04-30 04:43:14 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.deleteCitiesByCountryId(Long))
+2025-04-30 04:43:14 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.deleteCitiesByCountryId(Long))
+2025-04-30 04:43:14 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 14
+2025-04-30 04:43:17 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:43:17 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:43:17 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:43:17 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:43:17 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 15
+2025-04-30 04:44:07 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 04:44:07 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:44:07 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 04:44:07 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 04:44:08 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 04:44:08 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 10395 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 04:44:08 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 04:44:09 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 04:44:09 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2025-04-30 04:44:09 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 04:44:09 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:44:09 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 04:44:09 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 04:44:09 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 04:44:09 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 801 ms
+2025-04-30 04:44:09 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 04:44:09 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 04:44:09 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 04:44:09 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 04:44:09 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 04:44:09 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7079f8f0
+2025-04-30 04:44:09 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 04:44:10 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 04:44:10 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 04:44:10 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 04:44:10 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 04:44:11 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 04:44:11 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 04:44:11 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.176 seconds (process running for 3.52)
+2025-04-30 04:44:19 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 04:44:19 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 04:44:19 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 04:44:19 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-04-30 04:44:19 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 04:44:19 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:44:19 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-04-30 04:44:19 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 05:21:21 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m41s207ms).
+2025-04-30 06:36:48 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h15m27s101ms).
+2025-04-30 08:07:11 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h30m23s62ms).
+2025-04-30 08:24:15 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m4s151ms).
+2025-04-30 08:24:44 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Retrograde clock change detected (housekeeper delta=28s592ms), soft-evicting connections from pool.
+2025-04-30 08:26:31 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 08:26:31 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 08:26:31 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 08:26:31 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 09:49:29 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 09:49:29 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 11921 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 09:49:29 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 09:49:30 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 09:49:30 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 3 JPA repository interfaces.
+2025-04-30 09:49:30 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 09:49:30 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 09:49:30 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 09:49:30 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 09:49:30 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 09:49:30 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 785 ms
+2025-04-30 09:49:30 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 09:49:30 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 09:49:30 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 09:49:31 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 09:49:31 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 09:49:31 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30704f85
+2025-04-30 09:49:31 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 09:49:31 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 09:49:31 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 09:49:31 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 09:49:31 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 09:49:33 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 09:49:33 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 09:49:33 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.205 seconds (process running for 3.615)
+2025-04-30 09:50:40 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 09:50:40 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 09:50:40 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 09:50:40 | INFO  | o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 243 ms
+2025-04-30 09:51:10 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=1
+2025-04-30 09:51:10 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 09:51:10 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-04-30 09:51:10 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-04-30 09:55:56 | INFO  | org.example.service.CountryService - 🔄 Country loaded from DB and cached: country_1
+2025-04-30 09:55:56 | WARN  | org.example.service.CountryService - Attempting to delete country ID: 1
+2025-04-30 09:55:56 | ERROR | org.example.service.CountryService - 🚫 Country not found with ID: 1
+2025-04-30 09:55:56 | ERROR | org.example.service.CountryService - 🚫 Country not found with ID: 1
+2025-04-30 09:55:56 | ERROR | org.example.service.CountryService - 🚫 Country not found with ID: 1
+2025-04-30 09:55:56 | INFO  | org.example.service.CountryService - 🔄 Fetched 0 countries from DB and cached
+2025-04-30 09:55:56 | ERROR | org.example.service.CountryService - 🚫 Country not found with ID: 1
+2025-04-30 09:55:56 | WARN  | org.example.service.CountryService - Attempting to delete country ID: 1
+2025-04-30 09:55:56 | INFO  | org.example.service.CountryService - 🔄 Country loaded from DB and cached: country_1
+2025-04-30 09:55:56 | INFO  | org.example.service.CountryService - 🗑️ Deleted country ID: 1
+2025-04-30 09:55:56 | ERROR | org.example.service.CountryService - 🚫 Country already exists: Belarus
+2025-04-30 09:55:56 | INFO  | org.example.service.CountryService - 🔄 Fetched 0 countries from DB and cached
+2025-04-30 09:55:56 | WARN  | org.example.service.CountryService - Attempting to delete all countries
+2025-04-30 09:55:56 | INFO  | org.example.service.CountryService - 🗑️ Deleted all countries
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - 🗑️ Deleting 2 cities from country 'null'
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - ✅ All cities deleted from country 'null'. Cache invalidated
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - ➕ Added city 'Grodno' (ID: 1) to country 'null' (ID: 1)
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'null' (ID: 1). Action: ADD
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 2) to country 'null' (ID: 1)
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'null' (ID: 1). Action: ADD
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - 🗑️ Deleting city 'Minsk' (ID: 1)
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - ✅ City 'Minsk' (ID: 1) deleted and cache invalidated
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - ✏️ Updated city 'Minsk' (ID: 1). New name: 'Grodno', population: 1000000.0, area: 5000.0 km²
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'null' (ID: 1). Action: UPDATE
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: null) to country 'null' (ID: 1)
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'null' (ID: 1). Action: ADD
+2025-04-30 09:55:56 | INFO  | org.example.service.CityService - Getting cities from cache
+2025-04-30 10:11:08 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-04-30 10:11:08 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:11:08 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 10:11:08 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 10:11:10 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:11:10 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 12534 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 10:11:10 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:11:10 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:11:10 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2025-04-30 10:11:11 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 10:11:11 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:11:11 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 10:11:11 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 10:11:11 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:11:11 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 720 ms
+2025-04-30 10:11:11 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 10:11:11 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 10:11:11 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 10:11:11 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 10:11:11 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 10:11:11 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1218e12
+2025-04-30 10:11:11 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 10:11:11 | ERROR | o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: Association 'org.example.model.Country.cities' is 'mappedBy' another entity and may not specify the '@JoinColumn'
+2025-04-30 10:11:11 | WARN  | o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'org.example.model.Country.cities' is 'mappedBy' another entity and may not specify the '@JoinColumn'
+2025-04-30 10:11:11 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-30 10:11:11 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-30 10:11:11 | INFO  | o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-30 10:11:11 | INFO  | o.s.b.a.l.ConditionEvaluationReportLogger - 
+2025-04-30 10:11:11 | ERROR | o.s.boot.SpringApplication - Application run failed
+2025-04-30 10:13:03 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-04-30 10:13:03 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 12588 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
+2025-04-30 10:13:03 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-30 10:13:03 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-30 10:13:03 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2025-04-30 10:13:03 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-30 10:13:03 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:13:03 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-30 10:13:03 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-04-30 10:13:04 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-30 10:13:04 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 728 ms
+2025-04-30 10:13:04 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-30 10:13:04 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-30 10:13:04 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-30 10:13:04 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-30 10:13:04 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-30 10:13:04 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@403f7aa2
+2025-04-30 10:13:04 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-30 10:13:04 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-30 10:13:04 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-30 10:13:04 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-04-30 10:13:05 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-30 10:13:06 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-30 10:13:06 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-30 10:13:06 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.073 seconds (process running for 3.419)
+2025-04-30 10:13:22 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30 10:13:22 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-30 10:13:22 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-30 10:13:22 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-30,*/*

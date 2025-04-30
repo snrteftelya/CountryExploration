@@ -1,140 +1,131 @@
 package org.example.controller;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
+import org.example.dto.CityDto;
 import org.example.model.City;
-import org.example.model.Country;
-import org.example.repository.CountryRepository;
 import org.example.service.CityService;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api")
+@Tag(name = "Cities", description = "You can view, add, update"
+        + " and delete information about cities")
+@CrossOrigin
 public class CityController {
 
     private final CityService cityService;
-    private final CountryRepository countryRepository; // Добавляем репозиторий стран
-
-    @Autowired
-    public CityController(CityService cityService, CountryRepository countryRepository) {
-        this.cityService = cityService;
-        this.countryRepository = countryRepository;
-    }
 
     @GetMapping(path = "cities")
-    public List<City> getCities() {
-        return cityService.getCities();
+    @Operation(method = "GET", summary = "Get cities")
+    public ResponseEntity<List<CityDto>> getCities() {
+        List<City> cities = cityService.getCities();
+        List<CityDto> dtos = cities.stream()
+                .map(CityDto::fromEntity)
+                .collect(Collectors.toList());
+        return new ResponseEntity<>(dtos, HttpStatus.OK);
     }
 
-    @GetMapping(path = "countries/{countryId}/cities")
-    public Set<City> getCitiesByCountryId(@PathVariable(value = "countryId") Long countryId) {
-        return cityService.getCitiesByCountryId(countryId);
+    @GetMapping("/countries/{countryId}/cities")
+    public ResponseEntity<List<CityDto>> getCitiesByCountryId(
+            @PathVariable Long countryId) {
+        Set<City> cities = cityService.getCitiesByCountryId(countryId);
+
+        if (cities.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.ok(
+                cities.stream()
+                        .map(CityDto::fromEntity)
+                        .collect(Collectors.toList())
+        );
+    }
+
+    @PostMapping(path = "countries/{countryId}/city")
+    @Operation(method = "POST",
+            summary = "Add city in country",
+            description = "Add new city in country by its id")
+    public ResponseEntity<City> addNewCityByCountryId(
+            @PathVariable(value = "countryId")
+            @Parameter(description = "Id of the country, "
+                    + "in which you want to add city") final Long countryId,
+            @RequestBody final City city) {
+        return new ResponseEntity<>(cityService
+                .addNewCityByCountryId(countryId, city),
+                HttpStatus.CREATED);
     }
 
     @PostMapping(path = "countries/{countryId}/cities")
-    public ResponseEntity<String> addNewCityByCountryId(
-            @PathVariable Long countryId,
-            @RequestBody City cityRequest) {
-        Country country = countryRepository.findById(countryId)
-                .orElseThrow(() -> new ResponseStatusException(
-                        HttpStatus.NOT_FOUND,
-                        "Country not found with ID: " + countryId
-                ));
-        cityRequest.setCountry(country);
-        cityService.addNewCityByCountryId(countryId, cityRequest);
-        return ResponseEntity.ok("City added successfully to country ID: " + countryId);
-    }
-
-    @DeleteMapping(path = "countries/{countryId}/cities")
-    public void deleteCitiesByCountryId(@PathVariable(value = "countryId") Long countryId) {
-        cityService.deleteCitiesByCountryId(countryId);
-    }
-
-    @DeleteMapping(path = "countries/{countryId}/cities/{cityId}")
-    public void deleteCityByIdFromCountryByCountryId(@PathVariable(value = "countryId")
-                                                     Long countryId,
-                                                     @PathVariable(value = "cityId") Long cityId) {
-        cityService.deleteCityByIdFromCountryByCountryId(countryId, cityId);
+    @Operation(method = "POST",
+            summary = "Add cities in country",
+            description = "Add new list of cities in country by its id")
+    public ResponseEntity<List<City>> addNewCitiesByCountryId(
+            @PathVariable(value = "countryId")
+            @Parameter(description = "Id of the country, "
+                    + "in which you want to add cities") final Long countryId,
+            @RequestBody final List<City> cities) {
+        return new ResponseEntity<>(cityService
+                .addNewCitiesByCountryId(countryId, cities),
+                HttpStatus.CREATED);
     }
 
     @PutMapping(path = "cities/{id}")
-    public void updateCity(
-            @PathVariable("id") Long cityId,
-            @RequestParam(required = false) String name,
-            @RequestParam(required = false) Double population,
-            @RequestParam(required = false) Double areaSquareKm) {
-        cityService.updateCity(cityId, name, population, areaSquareKm);
+    @Operation(method = "PUT",
+            summary = "Update city",
+            description = "Update information about city by its id")
+    public ResponseEntity<City> updateCity(
+            @PathVariable("id") final Long cityId,
+            @RequestParam(required = false)
+            @Parameter(description = "Name of city")
+            final String name,
+            @RequestParam(required = false)
+            @Parameter(description = "Quantity of population of city")
+            final Double population,
+            @RequestParam(required = false)
+            @Parameter(description = "Area of city in square km")
+            final Double areaSquareKm) {
+        return new ResponseEntity<>(cityService
+                .updateCity(cityId, name, population, areaSquareKm),
+                HttpStatus.OK);
     }
 
-    @GetMapping("countries/{countryId}/cities/analytics")
-    public Map<String, Object> getCityAnalyticsByCountry(
-            @PathVariable Long countryId,
-            @RequestParam(required = false, defaultValue = "100000") int smallCityThreshold,
-            @RequestParam(required = false, defaultValue = "1000000") int largeCityThreshold
-    ) {
-        Set<City> cities = cityService.getCitiesByCountryId(countryId);
+    @DeleteMapping(path = "countries/{countryId}/cities")
+    @Operation(method = "DELETE",
+            summary = "Delete cities from country",
+            description = "Delete all cities from country by its id")
+    public ResponseEntity<HttpStatus> deleteCitiesByCountryId(
+            @PathVariable(value = "countryId")
+            @Parameter(description = "Id of the country,"
+                    + " in which you want to delete all cities")
+            final Long countryId) {
+        cityService.deleteCitiesByCountryId(countryId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
-
-        if (cities.isEmpty()) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND,
-                    "No cities found for country ID: " + countryId
-            );
-        }
-
-        double totalPopulation = cities.stream()
-                .mapToDouble(City::getPopulation)
-                .sum();
-
-        double avgArea = cities.stream()
-                .mapToDouble(City::getAreaSquareKm)
-                .average()
-                .orElse(0);
-
-        City largestCity = cities.stream()
-                .max(Comparator.comparingDouble(City::getPopulation))
-                .orElseThrow();
-
-        Map<String, Long> citySizeDistribution = cities.stream()
-                .collect(Collectors.groupingBy(
-                        city -> {
-                            if (city.getPopulation() < smallCityThreshold) {
-                                return "small";
-                            } else if (city.getPopulation() < largeCityThreshold) {
-                                return "medium";
-                            } else {
-                                return "large";
-                            }
-                        },
-                        Collectors.counting()
-                ));
-
-        // Формируем ответ
-        return Map.of(
-                "totalCities", cities.size(),
-                "totalPopulation", totalPopulation,
-                "averageAreaSquareKm", avgArea,
-                "largestCity", Map.of(
-                        "name", largestCity.getName(),
-                        "population", largestCity.getPopulation(),
-                        "areaSquareKm", largestCity.getAreaSquareKm()
-                ),
-                "citySizeDistribution", citySizeDistribution
-        );
+    @DeleteMapping(path = "countries/{countryId}/cities/{cityId}")
+    @Operation(method = "DELETE",
+            summary = "Delete city from country",
+            description = "Delete city by its id from country by id")
+    public ResponseEntity<HttpStatus> deleteCityByIdFromCountryByCountryId(
+            @PathVariable(value = "countryId")
+            @Parameter(description = "Id of the country,"
+                    + " in which you want to delete city")
+            final Long countryId,
+            @PathVariable(value = "cityId")
+            @Parameter(description = "Id of the city,"
+                    + " that's need to delete from country")
+            final Long cityId) {
+        cityService.deleteCityByIdFromCountryByCountryId(countryId, cityId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

@@ -1,57 +1,52 @@
 package org.example.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
+import java.util.HashSet;
+import java.util.Set;
+
+@Data
 @Entity
 @Table(name = "country")
-@Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "cities", "nations"})
 public class Country {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
+    @Hidden
     private Long id;
 
     @Column(name = "name")
+    @Schema(example = "Belarus")
     private String name;
 
     @Column(name = "capital")
+    @Schema(example = "Minsk")
     private String capital;
 
     @Column(name = "population")
+    @Schema(example = "1.431E8")
     private Double population;
 
     @Column(name = "area")
+    @Schema(example = "1.71E7")
     private Double areaSquareKm;
 
     @Column(name = "gdp")
+    @Schema(example = "1.779E12")
     private Double gdp;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    private Set<City> cities;
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<City> cities = new HashSet<>();
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+
+    @ManyToMany
     @JoinTable(name = "country_nations",
             joinColumns = {@JoinColumn(name = "country_id")},
             inverseJoinColumns = {@JoinColumn(name = "nation_id")})
-    @ToString.Exclude
-    @JsonIgnore
     private Set<Nation> nations;
 }
