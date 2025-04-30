@@ -8,6 +8,7 @@ import org.example.exception.ObjectNotFoundException;
 import org.example.model.City;
 import org.example.model.Country;
 import org.example.model.Nation;
+import org.example.repository.CityRepository;
 import org.example.repository.CountryRepository;
 import jakarta.transaction.Transactional;
 import org.hibernate.Hibernate;
@@ -23,6 +24,8 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CountryService {
     private static final Logger logger = LoggerFactory.getLogger(CountryService.class);
+
+    private CityRepository cityRepository;
 
     private final CountryRepository countryRepository;
     private final SearchCache searchCache;
@@ -128,15 +131,33 @@ public class CountryService {
 
     // Удаление страны
     @Transactional
-    public void deleteCountry(Long countryId) {
-        logger.warn("Attempting to delete country ID: {}", countryId);
+    public void deleteCountry(Long id) {
+        logger.warn("Attempting to delete country ID: {}", id);
 
-        Country country = getCountryById(countryId);
+        Country country = countryRepository.findById(id)
+                .orElseThrow(() -> new ObjectNotFoundException("Country not found with ID: " + id));
+
+        // Delete all cities associated with this country
+        cityRepository.deleteAll();
+        // Flush to ensure the cities are deleted in the database
+        cityRepository.flush();
+
+        // Clear the cities collection in the Hibernate session
+        if (country.getCities() != null) {
+            country.getCities().clear();
+        }
+
+        // Clear associations with Nations (if needed)
+        if (country.getNations() != null) {
+            country.getNations().forEach(nation -> nation.getCountries().remove(country));
+            country.getNations().clear();
+        }
+
+        // Delete the country
+        countryRepository.delete(country);
+        // Invalidate cache
         invalidateDependentCaches(country);
-
-        country.getCities().clear();
-        countryRepository.deleteById(countryId);
-        logger.info("🗑️ Deleted country ID: {}", countryId);
+        logger.info("🗑️ Deleted country ID: {}", id);
     }
 
     // Вспомогательные методы
