@@ -37,9 +37,6 @@ public class CityController {
     @Operation(method = "GET", summary = "Get cities")
     public ResponseEntity<List<CityDto>> getCities() {
         List<City> cities = cityService.getCities();
-        List<CityDto> dtos = cities.stream()
-                .map(CityDto::fromEntity)
-                .toList();
         return ResponseEntity.ok(
                 cities.stream()
                         .map(CityDto::fromEntity)
@@ -51,15 +48,13 @@ public class CityController {
     public ResponseEntity<List<CityDto>> getCitiesByCountryId(
             @PathVariable Long countryId) {
         Set<City> cities = cityService.getCitiesByCountryId(countryId);
-
         if (cities.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
-
         return ResponseEntity.ok(
                 cities.stream()
                         .map(CityDto::fromEntity)
-                        .collect(Collectors.toList())
+                        .toList()
         );
     }
 
