@@ -2,6 +2,7 @@ package org.example.service;
 
 import jakarta.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -24,6 +25,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class CityService {
 
+    public static final String NOT_FOUND_MESSAGE = "Country not found";
     private final CityRepository cityRepository;
 
     private final CountryRepository countryRepository;
@@ -40,7 +42,7 @@ public class CityService {
     private static final String COUNTRY_ID = "countryId_";
 
 
-    private void updateCache(final Country country, String action, Object data) {
+    private void updateCache(final Country country, String action) {
         logger.info("🔄 Updating cache for country '{}' (ID: {}). Action: {}", country.getName(),
                 country.getId(), action);
 
@@ -82,12 +84,10 @@ public class CityService {
 
     @SuppressWarnings("unchecked")
     private List<City> safeCastToListOfCities(Object obj) {
-        if (obj instanceof List<?> list) {
-            if (list.isEmpty() || list.get(0) instanceof City) {
-                return (List<City>) list;
-            }
+        if (obj instanceof List<?> list && (list.isEmpty() || list.get(0) instanceof City)) {
+            return (List<City>) list;
         }
-        return null;
+        return Collections.emptyList();
     }
 
     @Transactional
@@ -139,7 +139,7 @@ public class CityService {
         logger.info("➕ Added city '{}' (ID: {}) to country '{}' (ID: {})",
                 cityRequest.getName(), cityRequest.getId(), country.getName(), country.getId());
 
-        updateCache(country, "ADD", cityRequest);
+        updateCache(country, "ADD");
         return cityRequest;
     }
 
@@ -167,7 +167,7 @@ public class CityService {
 
         Country country = countryRepository
                 .findCountryWithCitiesByCityId(cityId)
-                .orElseThrow(() -> new ObjectNotFoundException("Country not found"));
+                .orElseThrow(() -> new ObjectNotFoundException(NOT_FOUND_MESSAGE));
 
         // Сохраняем исходные данные для логов
         String oldName = city.getName();
@@ -204,7 +204,7 @@ public class CityService {
         logger.info("✏️ Updated city '{}' (ID: {}). New name: '{}', population: {}, area: {} km²",
                 oldName, cityId, name, population, areaSquareKm);
 
-        updateCache(country, "UPDATE", city);
+        updateCache(country, "UPDATE");
 
         return city;
     }
@@ -212,7 +212,7 @@ public class CityService {
     @Transactional
     public void deleteCitiesByCountryId(final Long countryId) {
         Country country = countryRepository.findCountryWithCitiesById(countryId)
-                .orElseThrow(() -> new ObjectNotFoundException("Country not found"));
+                .orElseThrow(() -> new ObjectNotFoundException(NOT_FOUND_MESSAGE));
 
         Set<City> citiesToDelete = new HashSet<>(country.getCities());
         logger.info("🗑️ Deleting {} cities from country '{}'",
@@ -234,7 +234,7 @@ public class CityService {
     @Transactional
     public void deleteCityByIdFromCountryByCountryId(final Long countryId, final Long cityId) {
         Country country = countryRepository.findCountryWithCitiesById(countryId)
-                .orElseThrow(() -> new ObjectNotFoundException("Country not found"));
+                .orElseThrow(() -> new ObjectNotFoundException(NOT_FOUND_MESSAGE));
 
         City city = cityRepository.findById(cityId)
                 .orElseThrow(() -> new ObjectNotFoundException("City not found"));

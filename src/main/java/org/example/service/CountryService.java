@@ -242,7 +242,7 @@ public class CountryService {
     private List<CountryDto> convertToCountryDtoList(List<Country> countries) {
         return countries.stream()
                 .map(this::convertToCountryDto)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     private CountryDto convertToCountryDto(Country country) {

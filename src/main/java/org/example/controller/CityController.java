@@ -39,8 +39,12 @@ public class CityController {
         List<City> cities = cityService.getCities();
         List<CityDto> dtos = cities.stream()
                 .map(CityDto::fromEntity)
-                .collect(Collectors.toList());
-        return new ResponseEntity<>(dtos, HttpStatus.OK);
+                .toList();
+        return ResponseEntity.ok(
+                cities.stream()
+                        .map(CityDto::fromEntity)
+                        .toList()
+        );
     }
 
     @GetMapping("/countries/{countryId}/cities")

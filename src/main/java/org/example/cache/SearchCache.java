@@ -10,8 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SearchCache {
     private static final int MAX_SIZE = 100;
-    private static final long TTL = 10 * 60 * 1000; // 10 минут в миллисекундах
-
+    private static final long TTL = 10L * 60 * 1000; // 10 минут в миллисекундах
     private final Map<String, Object> cache = new LinkedHashMap<>() {
         @Override
         protected boolean removeEldestEntry(Map.Entry eldest) {

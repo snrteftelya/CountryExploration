@@ -59,7 +59,7 @@ public class LogsController {
                     description = "Internal server error while processing log files")
     })
     @GetMapping
-    public ResponseEntity<?> downloadOrViewLogs(
+    public ResponseEntity<Object> downloadOrViewLogs(
             @Parameter(description = "Date in yyyy-MM-dd format",
                     example = "2025-04-24", required = true)
             @RequestParam(name = "date")
