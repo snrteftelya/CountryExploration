@@ -70,7 +70,7 @@ public class CityService {
 
         List<City> cities = cityRepository.findAll();
 
-        // Инициализация ленивых коллекций
+
         cities.forEach(city -> {
             if (city.getCountry() != null) {
                 Hibernate.initialize(city.getCountry().getCities());
@@ -98,7 +98,7 @@ public class CityService {
             return (Set<City>) searchCache.get(cacheKey);
         }
 
-        // Вариант 1: Используем кастомный запрос
+
         Set<City> cities = new HashSet<>(cityRepository.findByCountryId(countryId));
 
         searchCache.put(cacheKey, cities);
@@ -113,23 +113,23 @@ public class CityService {
                         "country, which id " + countryId
                                 + " does not exist, you can't add new city"));
 
-        // Проверка на дубликат имени города
+
         if (country.getCities().stream().anyMatch(c -> c.getName().equals(cityRequest.getName()))) {
             throw new ObjectExistedException("City with name "
                     + cityRequest.getName() + " already exists");
         }
 
-        // Устанавливаем связь с Country
+
         cityRequest.setCountry(country);
 
-        // Сохраняем город (каскадное сохранение через Country не требуется)
+
         cityRepository.save(cityRequest);
 
         searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId); // <-- Добавлено здесь
 
         searchCache.remove(ALL_CITIES);
 
-        // Обновляем кэш
+
         if (searchCache.containsKey(ALL_CITIES)) {
             List<City> allCities = (List<City>) searchCache.get(ALL_CITIES);
             allCities.add(cityRequest);
@@ -169,10 +169,10 @@ public class CityService {
                 .findCountryWithCitiesByCityId(cityId)
                 .orElseThrow(() -> new ObjectNotFoundException(NOT_FOUND_MESSAGE));
 
-        // Сохраняем исходные данные для логов
+
         String oldName = city.getName();
 
-        // Проверка на уникальность нового имени
+
         if (name != null && !name.equals(city.getName())) {
             boolean nameExists = country.getCities().stream()
                     .anyMatch(c -> c.getName().equalsIgnoreCase(name));
@@ -182,20 +182,20 @@ public class CityService {
             city.setName(name);
         }
 
-        // Обновление полей
+
         Optional.ofNullable(population).filter(p -> p > 0).ifPresent(city::setPopulation);
         Optional.ofNullable(areaSquareKm).filter(a -> a > 0).ifPresent(city::setAreaSquareKm);
 
-        // Явное сохранение изменений (не обязательно, но добавляет ясность)
+
         cityRepository.save(city);
 
-        // Инвалидация кэша
+
         searchCache.remove(ALL_CITIES);
         searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + country.getId());
-        // Обновление кэша
+
         if (searchCache.containsKey(ALL_CITIES)) {
             List<City> allCities = (List<City>) searchCache.get(ALL_CITIES);
-            // Удаляем старую версию по ID и добавляем обновленную
+
             allCities.removeIf(c -> c.getId().equals(cityId));
             allCities.add(city);
             searchCache.put(ALL_CITIES, allCities);
@@ -218,12 +218,12 @@ public class CityService {
         logger.info("🗑️ Deleting {} cities from country '{}'",
                 citiesToDelete.size(), country.getName());
 
-        // Удаление всех городов
+
         cityRepository.deleteAll(citiesToDelete);
         country.getCities().clear();
         countryRepository.save(country);
 
-        // Полная инвалидация кэша
+
         searchCache.remove(ALL_CITIES);
         searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId);
         searchCache.remove(COUNTRY_ID + countryId);
@@ -241,21 +241,21 @@ public class CityService {
 
         logger.info("🗑️ Deleting city '{}' (ID: {})", city.getName(), cityId);
 
-        // Удаление города из базы
+
         cityRepository.deleteById(cityId);
         country.getCities().remove(city);
         countryRepository.save(country);
 
         searchCache.remove(ALL_CITIES);
         searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId);
-        // Явное обновление кэша
+
         if (searchCache.containsKey(ALL_CITIES)) {
             List<City> allCities = (List<City>) searchCache.get(ALL_CITIES);
             allCities.removeIf(c -> c.getId().equals(cityId));
             searchCache.put(ALL_CITIES, allCities);
         }
 
-        // Инвалидация кэша по стране
+
         searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId);
         searchCache.remove(COUNTRY_ID + countryId);
 

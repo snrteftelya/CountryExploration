@@ -71,13 +71,13 @@ public class LogsController {
 
         String filteredLogs = getFilteredLogs(date);
 
-        // Создаём файл с логами для конкретной даты
+
         Path logFile = LOGS_DIR.resolve(date + ".log");
         Files.write(logFile, filteredLogs.getBytes(StandardCharsets.UTF_8),
                 StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
 
         if (acceptHeader.contains(MediaType.APPLICATION_OCTET_STREAM_VALUE)) {
-            // Клиент хочет скачать файл
+
             InputStream inputStream = Files.newInputStream(logFile,
                     StandardOpenOption.DELETE_ON_CLOSE);
             InputStreamResource resource = new InputStreamResource(inputStream);
@@ -95,7 +95,7 @@ public class LogsController {
                     .body(resource);
         }
 
-        // Клиент хочет просто посмотреть текст
+
         return ResponseEntity.ok()
                 .contentType(MediaType.TEXT_PLAIN)
                 .body(filteredLogs);
@@ -116,7 +116,7 @@ public class LogsController {
         }
 
         try (Stream<String> lines = Files.lines(LOG_PATH)) {
-            // Фильтруем строки, начинающиеся с искомой даты
+
             String filtered = lines
                     .filter(line -> line.startsWith(date))
                     .collect(Collectors.joining("\n"));

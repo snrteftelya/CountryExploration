@@ -9604,3 +9604,300 @@ java.lang.IllegalStateException: Could not resolve parameter [0] in public org.s
 2025-05-02 14:48:56 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
 2025-05-02 14:48:56 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
 2025-05-02 14:48:56 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-05-02 14:53:13 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-05-02 14:53:13 | INFO  | org.example.service.CityService - Getting cities from cache
+2025-05-02 14:53:13 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 14:53:13 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 14:53:13 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-05-02 14:57:10 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-05-02 14:57:10 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02 14:57:10 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-02 14:57:10 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-02 14:57:12 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 14:57:12 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 29626 (/Users/snrteftelya/Desktop/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountrySearch)
+2025-05-02 14:57:12 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-02 14:57:12 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-02 14:57:12 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 3 JPA repository interfaces.
+2025-05-02 14:57:13 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-02 14:57:13 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-02 14:57:13 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-02 14:57:13 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-05-02 14:57:13 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-02 14:57:13 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 734 ms
+2025-05-02 14:57:13 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-02 14:57:13 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-05-02 14:57:13 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-02 14:57:13 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-02 14:57:13 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-02 14:57:13 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@403f7aa2
+2025-05-02 14:57:13 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-02 14:57:14 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-02 14:57:14 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02 14:57:14 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-05-02 14:57:14 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-02 14:57:15 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-02 14:57:15 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-02 14:57:15 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.124 seconds (process running for 3.468)
+2025-05-02 14:57:17 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-02 14:57:17 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-02 14:57:17 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-02 14:57:17 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-05-02 14:57:17 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-05-02 14:57:17 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 14:57:17 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 14:57:17 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-05-02 14:57:19 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 14:57:19 | INFO  | org.example.service.CountryService - 🔄 Fetched 0 countries from DB and cached
+2025-05-02 14:57:19 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 14:57:19 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 14:57:19 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-05-02 14:57:22 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.addNewCountry(Country)), args=Country(id=null, name=Germany, capital=Berlin, population=4.5321033E7, areaSquareKm=4130431.0, gdp=60.23, cities=[], nations=null)
+2025-05-02 14:57:22 | INFO  | org.example.service.CountryService - ✨ Created country: Germany (ID: 9)
+2025-05-02 14:57:22 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.addNewCountry(Country))
+2025-05-02 14:57:22 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.addNewCountry(Country))
+2025-05-02 14:57:22 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-05-02 14:57:24 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 14:57:24 | INFO  | org.example.service.CountryService - 🔄 Fetched 1 countries from DB and cached
+2025-05-02 14:57:24 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 14:57:24 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 14:57:24 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-05-02 14:57:33 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCitiesByCountryId(Long,List)), args=9,[City(id=null, name=Minsk, population=2000000.0, areaSquareKm=409.5, country=null), City(id=null, name=Grodno, population=370000.0, areaSquareKm=142.1, country=null)]
+2025-05-02 14:57:33 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 58) to country 'Germany' (ID: 9)
+2025-05-02 14:57:33 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 9). Action: ADD
+2025-05-02 14:57:33 | INFO  | org.example.service.CityService - ➕ Added city 'Grodno' (ID: 59) to country 'Germany' (ID: 9)
+2025-05-02 14:57:33 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 9). Action: ADD
+2025-05-02 14:57:33 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.addNewCitiesByCountryId(Long,List))
+2025-05-02 14:57:33 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCitiesByCountryId(Long,List))
+2025-05-02 14:57:33 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-05-02 14:57:36 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-05-02 14:57:36 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-05-02 14:57:36 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 14:57:36 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 14:57:36 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 6
+2025-05-02 14:57:39 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 14:57:39 | INFO  | org.example.service.CountryService - ✅ Retrieved 1 countries from cache
+2025-05-02 14:57:39 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 14:57:39 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 14:57:39 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 7
+2025-05-02 14:57:43 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.deleteCountry(Long)), args=9
+2025-05-02 14:57:43 | WARN  | org.example.service.CountryService - Попытка удаления страны с ID: 9
+2025-05-02 14:57:43 | INFO  | org.example.service.CountryService - 🗑️ Страна с ID: 9 удалена
+2025-05-02 14:57:43 | WARN  | o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+2025-05-02 14:57:43 | ERROR | o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: update or delete on table "country" violates foreign key constraint "fkrpd7j1p7yxr784adkx4pyepba" on table "city"
+  Подробности: Key (id)=(9) is still referenced from table "city".
+2025-05-02 14:57:43 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CountryController.deleteCountry(Long)), exception: could not execute statement [ERROR: update or delete on table "country" violates foreign key constraint "fkrpd7j1p7yxr784adkx4pyepba" on table "city"
+  Подробности: Key (id)=(9) is still referenced from table "city".] [delete from country where id=?]; SQL [delete from country where id=?]; constraint [fkrpd7j1p7yxr784adkx4pyepba]
+2025-05-02 14:57:43 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.deleteCountry(Long))
+2025-05-02 14:57:43 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 8
+2025-05-02 15:00:05 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:00:05 | WARN  | com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@403f7aa2 (Соединение уже было закрыто). Possibly consider using a shorter maxLifetime value.
+2025-05-02 15:00:05 | WARN  | com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@19bddb01 (Соединение уже было закрыто). Possibly consider using a shorter maxLifetime value.
+2025-05-02 15:00:05 | WARN  | com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@27f403fe (Соединение уже было закрыто). Possibly consider using a shorter maxLifetime value.
+2025-05-02 15:00:05 | WARN  | com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1d37d337 (Соединение уже было закрыто). Possibly consider using a shorter maxLifetime value.
+2025-05-02 15:00:05 | WARN  | com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5f91421e (Соединение уже было закрыто). Possibly consider using a shorter maxLifetime value.
+2025-05-02 15:00:05 | WARN  | com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2883ff3e (Соединение уже было закрыто). Possibly consider using a shorter maxLifetime value.
+2025-05-02 15:00:05 | WARN  | com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2f6fe223 (Соединение уже было закрыто). Possibly consider using a shorter maxLifetime value.
+2025-05-02 15:00:05 | WARN  | com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@ce22292 (Соединение уже было закрыто). Possibly consider using a shorter maxLifetime value.
+2025-05-02 15:00:05 | WARN  | com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@59b610a2 (Соединение уже было закрыто). Possibly consider using a shorter maxLifetime value.
+2025-05-02 15:00:05 | WARN  | com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6efb7ea5 (Соединение уже было закрыто). Possibly consider using a shorter maxLifetime value.
+2025-05-02 15:00:05 | INFO  | org.example.service.CountryService - 🔄 Fetched 1 countries from DB and cached
+2025-05-02 15:00:05 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:00:05 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:00:05 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 9
+2025-05-02 15:00:13 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-05-02 15:00:13 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02 15:00:13 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-02 15:00:13 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-02 15:00:14 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 15:00:14 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 29824 (/Users/snrteftelya/Desktop/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountrySearch)
+2025-05-02 15:00:14 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-02 15:00:14 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-02 15:00:14 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2025-05-02 15:00:15 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-02 15:00:15 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-02 15:00:15 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-02 15:00:15 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-05-02 15:00:15 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-02 15:00:15 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 776 ms
+2025-05-02 15:00:15 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-02 15:00:15 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-05-02 15:00:15 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-02 15:00:15 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-02 15:00:15 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-02 15:00:15 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@d949bc4
+2025-05-02 15:00:15 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-02 15:00:15 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-02 15:00:15 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02 15:00:15 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-05-02 15:00:16 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-02 15:00:17 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-02 15:00:17 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-02 15:00:17 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.347 seconds (process running for 3.716)
+2025-05-02 15:00:17 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-02 15:00:17 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-02 15:00:17 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-02 15:00:17 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:00:17 | INFO  | org.example.service.CountryService - 🔄 Fetched 1 countries from DB and cached
+2025-05-02 15:00:17 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:00:17 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:00:17 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-05-02 15:00:18 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:00:18 | INFO  | org.example.service.CountryService - ✅ Retrieved 1 countries from cache
+2025-05-02 15:00:18 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:00:18 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:00:18 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-05-02 15:00:25 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountryById(Long)), args=9
+2025-05-02 15:00:25 | INFO  | org.example.service.CountryService - 🔄 Country loaded from DB and cached: country_9
+2025-05-02 15:00:25 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountryById(Long))
+2025-05-02 15:00:25 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountryById(Long))
+2025-05-02 15:00:25 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-05-02 15:00:36 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=9
+2025-05-02 15:00:36 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-05-02 15:00:36 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-05-02 15:00:36 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-05-02 15:00:48 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long)), args=9
+2025-05-02 15:00:48 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-05-02 15:00:48 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCitiesByCountryId(Long))
+2025-05-02 15:00:48 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-05-02 15:00:53 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.deleteCountry(Long)), args=9
+2025-05-02 15:00:53 | WARN  | org.example.service.CountryService - Попытка удаления страны с ID: 9
+2025-05-02 15:00:53 | INFO  | org.example.service.CountryService - 🗑️ Страна с ID: 9 удалена
+2025-05-02 15:00:53 | WARN  | o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23503
+2025-05-02 15:00:53 | ERROR | o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: update or delete on table "country" violates foreign key constraint "fkrpd7j1p7yxr784adkx4pyepba" on table "city"
+  Подробности: Key (id)=(9) is still referenced from table "city".
+2025-05-02 15:00:53 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CountryController.deleteCountry(Long)), exception: could not execute statement [ERROR: update or delete on table "country" violates foreign key constraint "fkrpd7j1p7yxr784adkx4pyepba" on table "city"
+  Подробности: Key (id)=(9) is still referenced from table "city".] [delete from country where id=?]; SQL [delete from country where id=?]; constraint [fkrpd7j1p7yxr784adkx4pyepba]
+2025-05-02 15:00:53 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.deleteCountry(Long))
+2025-05-02 15:00:53 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 6
+2025-05-02 15:02:09 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-05-02 15:02:09 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02 15:02:09 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-02 15:02:09 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-02 15:02:11 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 15:02:11 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 29907 (/Users/snrteftelya/Desktop/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountrySearch)
+2025-05-02 15:02:11 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-02 15:02:11 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-02 15:02:11 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2025-05-02 15:02:12 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-02 15:02:12 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-02 15:02:12 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-02 15:02:12 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-05-02 15:02:12 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-02 15:02:12 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 713 ms
+2025-05-02 15:02:12 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-02 15:02:12 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-05-02 15:02:12 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-02 15:02:12 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-02 15:02:12 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-02 15:02:12 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1de12397
+2025-05-02 15:02:12 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-02 15:02:12 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-02 15:02:12 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02 15:02:12 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-05-02 15:02:13 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-02 15:02:14 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-02 15:02:14 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-02 15:02:14 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.231 seconds (process running for 3.585)
+2025-05-02 15:02:16 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-02 15:02:16 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-02 15:02:16 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-02 15:02:16 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:02:16 | INFO  | org.example.service.CountryService - 🔄 Fetched 1 countries from DB and cached
+2025-05-02 15:02:16 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:02:16 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:02:16 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-05-02 15:02:18 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.deleteCountry(Long)), args=9
+2025-05-02 15:02:18 | WARN  | org.example.service.CountryService - Attempting to delete country ID: 9
+2025-05-02 15:02:19 | INFO  | org.example.service.CountryService - 🗑️ Deleted country ID: 9
+2025-05-02 15:02:19 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.deleteCountry(Long))
+2025-05-02 15:02:19 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.deleteCountry(Long))
+2025-05-02 15:02:19 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-05-02 15:02:21 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-05-02 15:02:21 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-05-02 15:02:21 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 15:02:21 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 15:02:21 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-05-02 15:02:47 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.addNewCountry(Country)), args=Country(id=null, name=Germany, capital=Berlin, population=4.5321033E7, areaSquareKm=4130431.0, gdp=60.23, cities=[], nations=null)
+2025-05-02 15:02:47 | INFO  | org.example.service.CountryService - ✨ Created country: Germany (ID: 10)
+2025-05-02 15:02:47 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.addNewCountry(Country))
+2025-05-02 15:02:47 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.addNewCountry(Country))
+2025-05-02 15:02:47 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-05-02 15:02:58 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.addNewCountry(Country)), args=Country(id=null, name=Германия, capital=Berlin, population=4.5321033E7, areaSquareKm=4130431.0, gdp=60.23, cities=[], nations=null)
+2025-05-02 15:02:58 | INFO  | org.example.service.CountryService - ✨ Created country: Германия (ID: 11)
+2025-05-02 15:02:58 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.addNewCountry(Country))
+2025-05-02 15:02:58 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.addNewCountry(Country))
+2025-05-02 15:02:58 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 5
+2025-05-02 15:03:02 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:03:02 | INFO  | org.example.service.CountryService - 🔄 Fetched 2 countries from DB and cached
+2025-05-02 15:03:02 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:03:02 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:03:02 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 6
+2025-05-02 15:03:08 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.addNewCitiesByCountryId(Long,List)), args=10,[City(id=null, name=Minsk, population=2000000.0, areaSquareKm=409.5, country=null), City(id=null, name=Grodno, population=370000.0, areaSquareKm=142.1, country=null)]
+2025-05-02 15:03:08 | INFO  | org.example.service.CityService - ➕ Added city 'Minsk' (ID: 60) to country 'Germany' (ID: 10)
+2025-05-02 15:03:08 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 10). Action: ADD
+2025-05-02 15:03:08 | INFO  | org.example.service.CityService - ➕ Added city 'Grodno' (ID: 61) to country 'Germany' (ID: 10)
+2025-05-02 15:03:08 | INFO  | org.example.service.CityService - 🔄 Updating cache for country 'Germany' (ID: 10). Action: ADD
+2025-05-02 15:03:08 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.addNewCitiesByCountryId(Long,List))
+2025-05-02 15:03:08 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.addNewCitiesByCountryId(Long,List))
+2025-05-02 15:03:08 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 7
+2025-05-02 15:03:10 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-05-02 15:03:10 | INFO  | org.example.service.CityService - Cities loaded from database and cached
+2025-05-02 15:03:10 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 15:03:10 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 15:03:10 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 8
+2025-05-02 15:03:40 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:03:40 | INFO  | org.example.service.CountryService - ✅ Retrieved 2 countries from cache
+2025-05-02 15:03:40 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:03:40 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:03:40 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 9
+2025-05-02 15:03:45 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CityController.getCities()), args=
+2025-05-02 15:03:45 | INFO  | org.example.service.CityService - Getting cities from cache
+2025-05-02 15:03:45 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 15:03:45 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CityController.getCities())
+2025-05-02 15:03:45 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 10
+2025-05-02 15:04:09 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String)), args=Berlin
+2025-05-02 15:04:09 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-05-02 15:04:09 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-05-02 15:04:09 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 11
+2025-05-02 15:04:15 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String)), args=Minsk
+2025-05-02 15:04:15 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-05-02 15:04:15 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.SearchController.searchCountriesByCity(String))
+2025-05-02 15:04:15 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 12
+2025-05-02 15:08:51 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double)), args=11
+2025-05-02 15:08:51 | INFO  | org.example.service.CountryService - ✅ Country found in cache: country_11
+2025-05-02 15:08:51 | INFO  | org.example.service.CountryService - 🔄 Updated country ID: 11
+2025-05-02 15:08:51 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double))
+2025-05-02 15:08:51 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double))
+2025-05-02 15:08:51 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 13
+2025-05-02 15:08:55 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:08:55 | INFO  | org.example.service.CountryService - 🔄 Fetched 2 countries from DB and cached
+2025-05-02 15:08:55 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:08:55 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:08:55 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 14
+2025-05-02 15:09:14 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double)), args=11,Germany,Berlin,3.31002651E8,9833517.0,21.45
+2025-05-02 15:09:14 | INFO  | org.example.service.CountryService - ✅ Country found in cache: country_11
+2025-05-02 15:09:14 | ERROR | org.example.service.CountryService - 🚫 Country name conflict: Germany
+2025-05-02 15:09:14 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double)), exception: Name exists
+2025-05-02 15:09:14 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double))
+2025-05-02 15:09:14 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 15
+2025-05-02 15:09:25 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double)), args=11,United States,Berlin,3.31002651E8,9833517.0,21.45
+2025-05-02 15:09:25 | INFO  | org.example.service.CountryService - ✅ Country found in cache: country_11
+2025-05-02 15:09:25 | INFO  | org.example.service.CountryService - 🔄 Updated country ID: 11
+2025-05-02 15:09:25 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double))
+2025-05-02 15:09:25 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double))
+2025-05-02 15:09:25 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 16
+2025-05-02 15:09:29 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:09:29 | INFO  | org.example.service.CountryService - 🔄 Fetched 2 countries from DB and cached
+2025-05-02 15:09:29 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:09:29 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:09:29 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 17
+2025-05-02 15:09:37 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double)), args=12,United States,Berlin,3.31002651E8,9833517.0,21.45
+2025-05-02 15:09:37 | ERROR | org.example.service.CountryService - 🚫 Country not found with ID: 12
+2025-05-02 15:09:37 | ERROR | o.example.aspect.CountrySearchAspect - After throwing execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double)), exception: Country not found
+2025-05-02 15:09:37 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.updateCountry(Long,String,String,Double,Double,Double))
+2025-05-02 15:09:37 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 18
+2025-05-02 15:10:05 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:10:05 | INFO  | org.example.service.CountryService - ✅ Retrieved 2 countries from cache
+2025-05-02 15:10:05 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:10:05 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:10:05 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 19

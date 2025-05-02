@@ -36,7 +36,7 @@ public class CountryService {
     private static final String CITIES_BY_COUNTRY_PREFIX = "cities_country_";
     private static final String COUNTRIES_BY_NATION_PREFIX = "countries_nation_";
 
-    // Получение всех стран
+
     @Transactional
     public List<Country> getCountries() {
         logger.debug("Attempting to get all countries");
@@ -55,7 +55,7 @@ public class CountryService {
         return countries;
     }
 
-    // Получение страны по ID
+
     @Transactional
     public Country getCountryById(Long countryId) {
         String cacheKey = COUNTRY_PREFIX + countryId;
@@ -78,7 +78,7 @@ public class CountryService {
         return country;
     }
 
-    // Добавление страны
+
     @Transactional
     public Country addNewCountry(Country country) {
         logger.debug("Attempting to add new country: {}", country.getName());
@@ -99,7 +99,7 @@ public class CountryService {
         return savedCountry;
     }
 
-    // Обновление страны
+
     @Transactional
     public Country updateCountry(Long countryId, String name, String capital,
                                  Double population, Double areaSquareKm, Double gdp) {
@@ -118,7 +118,7 @@ public class CountryService {
             country.setName(name);
         }
 
-        // Обновление остальных полей
+
         Optional.ofNullable(capital).ifPresent(country::setCapital);
         Optional.ofNullable(population).ifPresent(country::setPopulation);
         Optional.ofNullable(areaSquareKm).ifPresent(country::setAreaSquareKm);
@@ -130,7 +130,7 @@ public class CountryService {
         return updatedCountry;
     }
 
-    // Удаление страны
+
     @Transactional
     public void deleteCountry(Long id) {
         logger.warn("Attempting to delete country ID: {}", id);
@@ -138,30 +138,30 @@ public class CountryService {
         Country country = countryRepository.findById(id)
                 .orElseThrow(() -> new ObjectNotFoundException("Country not found with ID: " + id));
 
-        // Delete all cities associated with this country
+
         cityRepository.deleteAll();
-        // Flush to ensure the cities are deleted in the database
+
         cityRepository.flush();
 
-        // Clear the cities collection in the Hibernate session
+
         if (country.getCities() != null) {
             country.getCities().clear();
         }
 
-        // Clear associations with Nations (if needed)
+
         if (country.getNations() != null) {
             country.getNations().forEach(nation -> nation.getCountries().remove(country));
             country.getNations().clear();
         }
 
-        // Delete the country
+
         countryRepository.delete(country);
-        // Invalidate cache
+
         invalidateDependentCaches(country);
         logger.info("🗑️ Deleted country ID: {}", id);
     }
 
-    // Вспомогательные методы
+
     private void initializeLazyCollections(Country country) {
         if (country.getCities() != null) {
             Hibernate.initialize(country.getCities());
@@ -179,16 +179,16 @@ public class CountryService {
     }
 
     private void updateCache(Country oldCountry, Country newCountry) {
-        // Инвалидация старых ключей
+
         searchCache.remove(COUNTRY_PREFIX + oldCountry.getId());
         searchCache.remove(ALL_COUNTRIES);
 
-        // Обновление связанных кэшей
+
         newCountry.getNations().forEach(nation ->
                 searchCache.remove(COUNTRIES_BY_NATION_PREFIX + nation.getId())
         );
 
-        // Добавление обновленных данных
+
         searchCache.put(COUNTRY_PREFIX + newCountry.getId(), newCountry);
     }
 
@@ -208,7 +208,7 @@ public class CountryService {
 
         List<Country> savedCountries = new ArrayList<>();
         for (Country country : countries) {
-            // Используем существующий метод добавления одной страны
+
             savedCountries.add(this.addNewCountry(country));
         }
 
@@ -220,15 +220,15 @@ public class CountryService {
     public void deleteCountries() {
         logger.warn("Attempting to delete all countries");
 
-        // Очищаем все связанные кэши
+
         searchCache.clear();
         logger.debug("♻️ Cleared all cache entries");
 
-        // Удаляем данные из БД
+
         countryRepository.deleteAll();
         logger.info("🗑️ Deleted all countries");
 
-        // Дополнительная очистка зависимых сущностей (если нужно)
+
         countryRepository.findAllWithCities().forEach(country ->
                 country.getCities().clear()
         );
