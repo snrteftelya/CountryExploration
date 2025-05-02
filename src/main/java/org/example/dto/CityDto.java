@@ -16,6 +16,7 @@ public class CityDto {
     @JsonIgnoreProperties({"cities", "nations"})
     private CountryDto country;
 
+    @SuppressWarnings("checkstyle:LocalVariableName")
     public static CityDto fromEntity(City city) {
         CityDto Dto = new CityDto();
         Dto.setId(city.getId());

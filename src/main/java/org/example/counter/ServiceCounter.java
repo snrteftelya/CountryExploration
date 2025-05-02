@@ -1,4 +1,5 @@
 package org.example.counter;
+
 import org.springframework.stereotype.Component;
 
 @Component

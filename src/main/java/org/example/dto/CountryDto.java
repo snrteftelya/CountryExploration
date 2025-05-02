@@ -1,10 +1,9 @@
 package org.example.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.Set;
 import lombok.Data;
 import org.example.model.Country;
-
-import java.util.Set;
 
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -17,6 +16,7 @@ public class CountryDto {
     private Double gdp;
     private Set<Long> cityIds;
 
+    @SuppressWarnings("checkstyle:LocalVariableName")
     public static CountryDto fromEntity(Country country) {
         CountryDto Dto = new CountryDto();
         Dto.setId(country.getId());

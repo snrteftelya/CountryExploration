@@ -1,13 +1,13 @@
 package org.example.repository;
 
+import java.util.List;
+import java.util.Optional;
 import org.example.model.Country;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface CountryRepository extends JpaRepository<Country, Long> {
@@ -45,6 +45,7 @@ public interface CountryRepository extends JpaRepository<Country, Long> {
     List<Country> findCountriesWithNationsByNationByNationId(
             @Param("nationId") Long nationId);
 
-    @Query("SELECT DISTINCT c FROM Country c JOIN c.cities city WHERE LOWER(city.name) LIKE LOWER(CONCAT('%', :cityName, '%'))")
+    @Query("SELECT DISTINCT c FROM Country c JOIN c.cities city WHERE LOWER(city.name)"
+            + " LIKE LOWER(CONCAT('%', :cityName, '%'))")
     List<Country> findCountriesByCityName(@Param("cityName") String cityName);
 }

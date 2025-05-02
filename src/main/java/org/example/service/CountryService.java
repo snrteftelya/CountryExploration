@@ -1,5 +1,11 @@
 package org.example.service;
 
+import jakarta.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import org.example.cache.SearchCache;
 import org.example.dto.CountryDto;
@@ -7,18 +13,13 @@ import org.example.exception.ObjectExistedException;
 import org.example.exception.ObjectNotFoundException;
 import org.example.model.City;
 import org.example.model.Country;
-import org.example.model.Nation;
 import org.example.repository.CityRepository;
 import org.example.repository.CountryRepository;
-import jakarta.transaction.Transactional;
 import org.hibernate.Hibernate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-
-import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor

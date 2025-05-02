@@ -1,24 +1,24 @@
 package org.example.service;
 
+import jakarta.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import lombok.AllArgsConstructor;
 import org.example.cache.SearchCache;
-import org.example.dto.CountryDto;
 import org.example.exception.ObjectExistedException;
 import org.example.exception.ObjectNotFoundException;
-import org.example.model.Nation;
-import org.example.repository.CountryRepository;
 import org.example.model.City;
 import org.example.model.Country;
 import org.example.repository.CityRepository;
-import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
+import org.example.repository.CountryRepository;
 import org.hibernate.Hibernate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -41,7 +41,8 @@ public class CityService {
 
 
     private void updateCache(final Country country, String action, Object data) {
-        logger.info("🔄 Updating cache for country '{}' (ID: {}). Action: {}", country.getName(), country.getId(), action);
+        logger.info("🔄 Updating cache for country '{}' (ID: {}). Action: {}", country.getName(),
+                country.getId(), action);
 
         searchCache.remove(ALL_CITIES);
         searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + country.getId());
@@ -109,11 +110,13 @@ public class CityService {
         Country country = countryRepository
                 .findCountryWithCitiesById(countryId)
                 .orElseThrow(() -> new ObjectNotFoundException(
-                        "country, which id " + countryId + " does not exist, you can't add new city"));
+                        "country, which id " + countryId
+                                + " does not exist, you can't add new city"));
 
         // Проверка на дубликат имени города
         if (country.getCities().stream().anyMatch(c -> c.getName().equals(cityRequest.getName()))) {
-            throw new ObjectExistedException("City with name " + cityRequest.getName() + " already exists");
+            throw new ObjectExistedException("City with name "
+                    + cityRequest.getName() + " already exists");
         }
 
         // Устанавливаем связь с Country
@@ -152,6 +155,7 @@ public class CityService {
         return addedCities;
     }
 
+    @SuppressWarnings("checkstyle:VariableDeclarationUsageDistance")
     @Transactional
     public City updateCity(final Long cityId,
                            final String name,
@@ -211,7 +215,8 @@ public class CityService {
                 .orElseThrow(() -> new ObjectNotFoundException("Country not found"));
 
         Set<City> citiesToDelete = new HashSet<>(country.getCities());
-        logger.info("🗑️ Deleting {} cities from country '{}'", citiesToDelete.size(), country.getName());
+        logger.info("🗑️ Deleting {} cities from country '{}'",
+                citiesToDelete.size(), country.getName());
 
         // Удаление всех городов
         cityRepository.deleteAll(citiesToDelete);

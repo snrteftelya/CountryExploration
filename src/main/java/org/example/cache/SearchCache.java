@@ -1,12 +1,11 @@
 package org.example.cache;
 
-import org.springframework.stereotype.Component;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import org.springframework.stereotype.Component;
 
 @Component
 public class SearchCache {
