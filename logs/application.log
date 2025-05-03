@@ -2308,52 +2308,11 @@ java.lang.IllegalStateException: No target Validator set
 2025-04-24 13:05:21 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-04-24 13:05:21 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
 2025-04-24 13:05:22 | INFO  | o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 239 ms
-2025-04-24 13:05:31 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-24,*/*
-2025-04-24 13:05:31 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
-2025-04-24 13:05:31 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
-2025-04-24 13:05:31 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
-2025-04-24 13:08:11 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
-2025-04-24 13:08:11 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-24 13:08:11 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-04-24 13:08:11 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-04-24 13:08:13 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2025-04-24 13:08:13 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 93286 (/Users/snrteftelya/Desktop/CountryExploration/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountryExploration/CountrySearch)
-2025-04-24 13:08:13 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
-2025-04-24 13:08:13 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-24 13:08:13 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 3 JPA repository interfaces.
-2025-04-24 13:08:14 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-24 13:08:14 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-24 13:08:14 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-04-24 13:08:14 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
-2025-04-24 13:08:14 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-04-24 13:08:14 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 734 ms
-2025-04-24 13:08:14 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-24 13:08:14 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-04-24 13:08:14 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-04-24 13:08:14 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-24 13:08:14 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-04-24 13:08:14 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c0e4262
-2025-04-24 13:08:14 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-04-24 13:08:15 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-24 13:08:15 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-24 13:08:15 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
-2025-04-24 13:08:15 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-04-24 13:08:16 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-04-24 13:08:16 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-2025-04-24 13:08:16 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.291 seconds (process running for 3.669)
-2025-04-24 13:08:17 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-24 13:08:17 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-04-24 13:08:17 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-04-24 13:08:17 | INFO  | o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 251 ms
-2025-04-24 13:08:21 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-24,*/*
+2025-04-24 13:05:31 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-24,**
 2025-04-24 13:08:21 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
 2025-04-24 13:08:21 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
 2025-04-24 13:08:21 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
-2025-04-24 13:08:36 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-22,*/*
-2025-04-24 13:08:36 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
-2025-04-24 13:08:36 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
-2025-04-24 13:08:36 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
-2025-04-24 13:12:36 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-20,*/*
+2025-04-24 13:08:36 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-22,**
 2025-04-24 13:12:36 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
 2025-04-24 13:12:36 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
 2025-04-24 13:12:36 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
@@ -2389,19 +2348,11 @@ java.lang.IllegalStateException: No target Validator set
 2025-04-24 13:15:07 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-04-24 13:15:07 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-04-24 13:15:07 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-04-24 13:15:07 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-20,*/*
-2025-04-24 13:15:07 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
-2025-04-24 13:15:07 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
-2025-04-24 13:15:07 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
-2025-04-24 13:15:13 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-20,*/*
+2025-04-24 13:15:07 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-20,**
 2025-04-24 13:15:13 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
 2025-04-24 13:15:13 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
 2025-04-24 13:15:13 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
-2025-04-24 13:15:18 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-22,*/*
-2025-04-24 13:15:18 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
-2025-04-24 13:15:18 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
-2025-04-24 13:15:18 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
-2025-04-24 13:15:53 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-22,*/*
+2025-04-24 13:15:18 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-22,**
 2025-04-24 13:15:53 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
 2025-04-24 13:15:53 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
 2025-04-24 13:15:53 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
@@ -2860,11 +2811,7 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 2025-04-30 02:48:35 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-04-30 02:48:35 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
 2025-04-30 02:48:35 | INFO  | o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 293 ms
-2025-04-30 02:48:52 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-30,*/*
-2025-04-30 02:48:52 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
-2025-04-30 02:48:52 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
-2025-04-30 02:48:52 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
-2025-04-30 02:49:58 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-30,*/*
+2025-04-30 02:48:52 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String)), args=2025-04-30,**
 2025-04-30 02:49:58 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
 2025-04-30 02:49:58 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.LogsController.downloadOrViewLogs(String,String))
 2025-04-30 02:49:58 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
@@ -9901,3 +9848,318 @@ java.lang.IllegalStateException: Could not resolve parameter [0] in public org.s
 2025-05-02 15:10:05 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
 2025-05-02 15:10:05 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
 2025-05-02 15:10:05 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 19
+2025-05-02 15:14:27 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-05-02 15:14:27 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02 15:14:27 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-02 15:14:27 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-02 15:14:29 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 15:14:29 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 30415 (/Users/snrteftelya/Desktop/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountrySearch)
+2025-05-02 15:14:29 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-02 15:14:29 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-02 15:14:30 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2025-05-02 15:14:30 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-02 15:14:30 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-02 15:14:30 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-02 15:14:30 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-05-02 15:14:30 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-02 15:14:30 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 710 ms
+2025-05-02 15:14:30 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-02 15:14:30 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-05-02 15:14:30 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-02 15:14:30 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-02 15:14:30 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-02 15:14:30 | INFO  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@655909e2
+2025-05-02 15:14:30 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-02 15:14:31 | INFO  | o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-02 15:14:31 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-02 15:14:31 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is initialized
+2025-05-02 15:14:31 | INFO  | o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-02 15:14:32 | INFO  | o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-02 15:14:32 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-02 15:14:32 | INFO  | o.example.CountrySearchApplication - Started CountrySearchApplication in 3.117 seconds (process running for 3.468)
+2025-05-02 15:14:47 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-02 15:14:47 | INFO  | o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-02 15:14:47 | INFO  | o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2025-05-02 15:14:47 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:14:47 | INFO  | org.example.service.CountryService - 🔄 Fetched 2 countries from DB and cached
+2025-05-02 15:14:47 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:14:47 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:14:47 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 1
+2025-05-02 15:14:50 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountries()), args=
+2025-05-02 15:14:50 | INFO  | org.example.service.CountryService - ✅ Retrieved 2 countries from cache
+2025-05-02 15:14:50 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:14:50 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountries())
+2025-05-02 15:14:50 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 2
+2025-05-02 15:15:00 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountryById(Long)), args=10
+2025-05-02 15:15:00 | INFO  | org.example.service.CountryService - 🔄 Country loaded from DB and cached: country_10
+2025-05-02 15:15:00 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountryById(Long))
+2025-05-02 15:15:00 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountryById(Long))
+2025-05-02 15:15:00 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 3
+2025-05-02 15:15:03 | INFO  | o.example.aspect.CountrySearchAspect - Before execution(ResponseEntity org.example.controller.CountryController.getCountryById(Long)), args=10
+2025-05-02 15:15:03 | INFO  | org.example.service.CountryService - ✅ Country found in cache: country_10
+2025-05-02 15:15:03 | INFO  | o.example.aspect.CountrySearchAspect - After returning execution(ResponseEntity org.example.controller.CountryController.getCountryById(Long))
+2025-05-02 15:15:03 | INFO  | o.example.aspect.CountrySearchAspect - After execution(ResponseEntity org.example.controller.CountryController.getCountryById(Long))
+2025-05-02 15:15:03 | INFO  | o.example.aspect.CountrySearchAspect - Count of your accessing the service: 4
+2025-05-02 15:15:43 | WARN  | o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler org.example.exception.ExceptionManager#objectNotFoundException(ObjectNotFoundException, WebRequest)
+java.lang.IllegalStateException: Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<org.example.exception.ErrorMessage> org.example.exception.ExceptionManager.objectNotFoundException(org.example.exception.ObjectNotFoundException,org.springframework.web.context.request.WebRequest): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:222)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:178)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1357)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1160)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-05-02 15:15:43 | WARN  | o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.ArrayList<org.example.model.Nation>` from Object value (token `JsonToken.START_OBJECT`)]
+2025-05-02 15:43:53 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m52s614ms).
+2025-05-02 16:00:18 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m54s886ms).
+2025-05-02 16:16:13 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m54s988ms).
+2025-05-02 16:32:38 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m54s950ms).
+2025-05-02 16:47:23 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m45s).
+2025-05-02 17:34:45 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m22s184ms).
+2025-05-02 19:09:29 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h34m44s216ms).
+2025-05-02 20:21:06 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h11m36s485ms).
+2025-05-02 21:54:28 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h33m22s596ms).
+2025-05-02 23:18:07 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h23m39s128ms).
+2025-05-03 00:25:08 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h7m1s58ms).
+2025-05-03 01:58:08 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h32m59s513ms).
+2025-05-03 03:18:24 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h20m16s375ms).
+2025-05-03 04:46:40 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h28m16s35ms).
+2025-05-03 06:05:37 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h18m56s968ms).
+2025-05-03 07:31:11 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h25m33s172ms).
+2025-05-03 08:49:40 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h18m29s953ms).
+2025-05-03 10:20:43 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h31m2s236ms).
+2025-05-03 11:48:57 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h28m13s878ms).
+2025-05-03 12:36:22 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m25s263ms).
+2025-05-03 13:37:23 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m1s345ms).
+2025-05-03 14:26:14 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48m51s264ms).
+2025-05-03 15:12:29 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m14s493ms).
+2025-05-03 15:59:23 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m54s162ms).
+2025-05-03 17:00:38 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m15s155ms).
+2025-05-03 18:15:02 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h14m23s946ms).
+2025-05-03 19:31:26 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h16m23s393ms).
+2025-05-03 21:00:04 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h28m38s14ms).
+2025-05-03 21:00:32 | WARN  | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Retrograde clock change detected (housekeeper delta=28s322ms), soft-evicting connections from pool.
+2025-05-03 21:04:32 | INFO  | o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 232 ms
+2025-05-03 21:32:01 | INFO  | o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x060xa00x010x000x060x9c0x030x03M0xe30x1e0xd2}0xa6A*N0xe80xe10xb8_0xf9:[sa0x150x990xa40x1b30x030xfb[[0x130x920xb50xfba ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:264)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-05-03 22:02:43 | INFO  | o.example.aspect.CountrySearchAspect - Aspect is destroyed
+2025-05-03 22:02:43 | INFO  | o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-03 22:02:43 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-03 22:02:43 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-03 22:02:46 | INFO  | o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-03 22:02:46 | INFO  | o.example.CountrySearchApplication - Starting CountrySearchApplication using Java 23.0.2 with PID 33554 (/Users/snrteftelya/Desktop/CountrySearch/target/classes started by snrteftelya in /Users/snrteftelya/Desktop/CountrySearch)
+2025-05-03 22:02:46 | INFO  | o.example.CountrySearchApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-03 22:02:46 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-03 22:02:46 | INFO  | o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2025-05-03 22:02:47 | INFO  | o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-03 22:02:47 | INFO  | o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-03 22:02:47 | INFO  | o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-03 22:02:47 | INFO  | o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-05-03 22:02:47 | INFO  | o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-03 22:02:47 | INFO  | o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 778 ms
+2025-05-03 22:02:47 | INFO  | o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-03 22:02:47 | INFO  | org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-05-03 22:02:47 | INFO  | o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-03 22:02:47 | INFO  | o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-03 22:02:47 | INFO  | com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-03 22:02:48 | ERROR | com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: FATAL: database "user" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2825)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:175)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:313)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:428)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.example.CountrySearchApplication.main(CountrySearchApplication.java:17)
+2025-05-03 22:02:48 | WARN  | o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.example.CountrySearchApplication.main(CountrySearchApplication.java:17)
+2025-05-03 22:02:48 | ERROR | o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-05-03 22:02:48 | WARN  | o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-05-03 22:02:48 | INFO  | o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-05-03 22:02:48 | INFO  | o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-03 22:02:48 | ERROR | o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.example.CountrySearchApplication.main(CountrySearchApplication.java:17)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769)
+	... 16 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:143)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:348)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 31 common frames omitted

@@ -55,7 +55,7 @@ public class CityService {
         );
     }
 
-    @Transactional() // Добавляем транзакцию
+    @Transactional()
     public List<City> getCities() {
         if (searchCache.containsKey(ALL_CITIES)) {
             Object cachedValue = searchCache.get(ALL_CITIES);
@@ -125,7 +125,7 @@ public class CityService {
 
         cityRepository.save(cityRequest);
 
-        searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId); // <-- Добавлено здесь
+        searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId);
 
         searchCache.remove(ALL_CITIES);
 

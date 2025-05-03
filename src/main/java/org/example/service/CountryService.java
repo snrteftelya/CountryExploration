@@ -105,7 +105,7 @@ public class CountryService {
                                  Double population, Double areaSquareKm, Double gdp) {
         logger.debug("Updating country ID: {}", countryId);
 
-        Country country = getCountryById(countryId); // Используем кэшированный метод
+        Country country = getCountryById(countryId);
         Country originalCountry = new Country();
         BeanUtils.copyProperties(country, originalCountry);
 
