@@ -100,7 +100,9 @@ public class CityService {
             if (cached instanceof Set<?> set && (set.isEmpty() || set.iterator().next()
                     instanceof CityDto)) {
                 logger.info("Getting cities with countryId_{} from cache", countryId);
-                logger.info(cached.toString());
+                if (logger.isInfoEnabled()) {
+                    logger.info("{}", cached);
+                }
                 return (Set<CityDto>) cached;
             }
             if (cached instanceof List<?> list && (list.isEmpty() || list.get(0)
@@ -122,7 +124,9 @@ public class CityService {
                 .collect(Collectors.toSet());
         searchCache.put(cacheKey, result);
         logger.info("Cities with countryId_{} loaded from database and cached", countryId);
-        logger.info(result.toString());
+        if (logger.isInfoEnabled()) {
+            logger.info("{}", result);
+        }
         return result;
     }
 
