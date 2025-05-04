@@ -96,9 +96,23 @@ public class CityController {
             @RequestParam(required = false)
             @Parameter(description = "Area of city in square km")
             final Double areaSquareKm) {
-        return new ResponseEntity<>(cityService
-                .updateCity(cityId, name, population, areaSquareKm),
-                HttpStatus.OK);
+        if (name != null && !isValidName(name)) {
+            throw new IllegalArgumentException("Invalid city name");
+        }
+        if (population != null && (population < 0 || Double.isNaN(population)
+                || Double.isInfinite(population))) {
+            throw new IllegalArgumentException("Invalid population value");
+        }
+        if (areaSquareKm != null && (areaSquareKm < 0 || Double.isNaN(areaSquareKm)
+                || Double.isInfinite(areaSquareKm))) {
+            throw new IllegalArgumentException("Invalid area value");
+        }
+        City updatedCity = cityService.updateCity(cityId, name, population, areaSquareKm);
+        return new ResponseEntity<>(updatedCity, HttpStatus.OK);
+    }
+
+    private boolean isValidName(String name) {
+        return name.matches("^[a-zA-Z0-9\\s\\-,.]{1,100}$");
     }
 
     @DeleteMapping(path = "countries/{countryId}/cities")

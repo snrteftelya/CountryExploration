@@ -38,21 +38,21 @@ public class CityService {
     private static final String ALL_COUNTRIES_BY_NATION_ID = "allCountriesByNationId_";
     private static final String COUNTRY_ID = "countryId_";
 
-    private void updateCache(final Country country, String action) {
-        String countryName = country.getName() != null ? country.getName() : "unknown";
-        logger.info("🔄 Updating cache for country '{}' (ID: {}). Action: {}",
-                countryName, country.getId(), action);
-
+    private void updateCache(final Country country, final String operation) {
+        Long countryId = country.getId();
         searchCache.remove(ALL_CITIES);
-        searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + country.getId());
-        searchCache.remove(COUNTRY_ID + country.getId());
-        searchCache.remove(CITIES_BY_COUNTRY_PREFIX + country.getId());
-
+        searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId);
+        searchCache.remove(COUNTRY_ID + countryId);
+        searchCache.remove(CITIES_BY_COUNTRY_PREFIX + countryId);
         if (country.getNations() != null) {
-            country.getNations().forEach(nation ->
-                    searchCache.remove(ALL_COUNTRIES_BY_NATION_ID + nation.getId())
-            );
+            country.getNations().forEach(nation -> searchCache.remove(
+                    ALL_COUNTRIES_BY_NATION_ID + nation.getId()));
         }
+        logger.info("🔄 Обновлён кэш для страны с ID: {}. Операция: {}", countryId, operation);
+    }
+
+    private boolean isValidName(String name) {
+        return name.matches("^[a-zA-Z0-9\\s\\-,.]{1,100}$");
     }
 
     @Transactional
@@ -152,18 +152,18 @@ public class CityService {
         if (cityRequest.getName() == null || cityRequest.getName().isEmpty()) {
             throw new IllegalArgumentException("City name cannot be null or empty");
         }
-        if (country.getCities().stream().anyMatch(c -> c.getName().equals(cityRequest.getName()))) {
-            throw new ObjectExistedException("City with name "
-                    + cityRequest.getName() + " already exists");
+        if (country.getCities().stream().anyMatch(c -> c.getName().equalsIgnoreCase(
+                cityRequest.getName()))) {
+            throw new ObjectExistedException("City with name " + cityRequest.getName()
+                    + " already exists");
         }
 
         cityRequest.setCountry(country);
         updateCache(country, "ADD");
-        cityRepository.save(cityRequest);
-
-        logger.info("➕ Added city '{}' (ID: {}) to country '{}' (ID: {})",
-                cityRequest.getName(), cityRequest.getId(), country.getName(), country.getId());
-        return cityRequest;
+        City savedCity = cityRepository.save(cityRequest);
+        logger.info("➕ Added city with ID: {} to country with ID: {}", savedCity.getId(),
+                countryId);
+        return savedCity;
     }
 
     @Transactional
@@ -180,42 +180,43 @@ public class CityService {
         return addedCities;
     }
 
-    @SuppressWarnings("checkstyle:VariableDeclarationUsageDistance")
     @Transactional
-    public City updateCity(final Long cityId, final String name,
-                           final Double population, final Double areaSquareKm) {
+    public City updateCity(final Long cityId, final String name, final Double population,
+                           final Double areaSquareKm) {
         if (cityId == null) {
-            throw new IllegalArgumentException("City ID cannot be null");
+            throw new IllegalArgumentException("ID города не может быть null");
+        }
+        if (name != null && !name.isEmpty() && !isValidName(name)) {
+            throw new IllegalArgumentException("Недопустимое название города");
         }
         City city = cityRepository.findById(cityId)
-                .orElseThrow(() -> new ObjectNotFoundException("City not found"));
-
-        Country country = countryRepository
-                .findCountryWithCitiesByCityId(cityId)
-                .orElseThrow(() -> new ObjectNotFoundException(NOT_FOUND_MESSAGE));
-
-        String oldName = city.getName();
-
-        if (name != null && !name.isEmpty() && !name.equals(city.getName())) {
+                .orElseThrow(() -> new ObjectNotFoundException("Город не найден"));
+        Country country = countryRepository.findCountryWithCitiesByCityId(cityId)
+                .orElseThrow(() -> new ObjectNotFoundException("Страна не найдена для города с ID: "
+                        + cityId));
+        if (name != null && !name.isEmpty() && !name.equalsIgnoreCase(city.getName())) {
             boolean nameExists = country.getCities().stream()
-                    .anyMatch(c -> c.getName().equalsIgnoreCase(name));
+                    .anyMatch(c -> c.getName().equalsIgnoreCase(name) && !c.getId().equals(cityId));
             if (nameExists) {
-                throw new ObjectExistedException("City name already exists");
+                throw new ObjectExistedException("Название города уже существует в этой стране");
             }
             city.setName(name);
         }
 
-        Optional.ofNullable(population).filter(p -> p > 0).ifPresent(city::setPopulation);
-        Optional.ofNullable(areaSquareKm).filter(a -> a > 0).ifPresent(city::setAreaSquareKm);
+
+        Optional.ofNullable(population).filter(p -> p >= 0 && !Double.isNaN(p)
+                        && !Double.isInfinite(p))
+                .ifPresent(city::setPopulation);
+        Optional.ofNullable(areaSquareKm).filter(a -> a > 0 && !Double.isNaN(a)
+                        && !Double.isInfinite(a))
+                .ifPresent(city::setAreaSquareKm);
+
 
         updateCache(country, "UPDATE");
+
+
         cityRepository.save(city);
-
-        logger.info("✏️ Updated city '{}' (ID: {}). New name: '{}', population: {}, area: {} km²",
-                oldName, cityId, name != null ? name : oldName,
-                population != null ? population : city.getPopulation(),
-                areaSquareKm != null ? areaSquareKm : city.getAreaSquareKm());
-
+        logger.info("✏️ Обновлён город с ID: {}. Операция: UPDATE", cityId);
         return city;
     }
 
@@ -228,8 +229,8 @@ public class CityService {
                 .orElseThrow(() -> new ObjectNotFoundException(NOT_FOUND_MESSAGE));
 
         Set<City> citiesToDelete = new HashSet<>(country.getCities());
-        logger.info("🗑️ Deleting {} cities from country '{}'",
-                citiesToDelete.size(), country.getName() != null ? country.getName() : "unknown");
+        logger.info("🗑️ Deleting {} cities from country with ID: {}",
+                citiesToDelete.size(), countryId);
 
         updateCache(country, "DELETE");
         cityRepository.deleteAll(citiesToDelete);
@@ -255,8 +256,7 @@ public class CityService {
         cityRepository.delete(city);
         invalidateCityCaches(cityId, countryId);
 
-        logger.info("Deleted city ID: {}, previously belonged to country ID: {}",
-                cityId, countryId);
+        logger.info("🗑️ Deleted city with ID: {}", cityId);
     }
 
     private void invalidateCityCaches(Long cityId, Long countryId) {
@@ -279,13 +279,17 @@ public class CityService {
         City city = cityRepository.findById(cityId)
                 .orElseThrow(() -> new ObjectNotFoundException("City not found"));
 
-        logger.info("🗑️ Deleting city '{}' (ID: {})", city.getName(), cityId);
+        if (!country.getCities().contains(city)) {
+            throw new ObjectNotFoundException("City does not belong to the specified country");
+        }
+
+        logger.info("🗑️ Deleting city with ID: {} from country with ID: {}", cityId, countryId);
 
         updateCache(country, "DELETE");
         cityRepository.deleteById(cityId);
         country.getCities().remove(city);
         countryRepository.save(country);
 
-        logger.info("✅ City '{}' (ID: {}) deleted and cache invalidated", city.getName(), cityId);
+        logger.info("✅ City with ID: {} deleted from country with ID: {}", cityId, countryId);
     }
 }
