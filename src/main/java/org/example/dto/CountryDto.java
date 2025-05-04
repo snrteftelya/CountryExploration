@@ -18,13 +18,13 @@ public class CountryDto {
 
     @SuppressWarnings("checkstyle:LocalVariableName")
     public static CountryDto fromEntity(Country country) {
-        CountryDto Dto = new CountryDto();
-        Dto.setId(country.getId());
-        Dto.setName(country.getName());
-        Dto.setCapital(country.getCapital());
-        Dto.setPopulation(country.getPopulation());
-        Dto.setAreaSquareKm(country.getAreaSquareKm());
-        Dto.setGdp(country.getGdp());
-        return Dto;
+        CountryDto dto = new CountryDto();
+        dto.setId(country.getId());
+        dto.setName(country.getName());
+        dto.setCapital(country.getCapital());
+        dto.setPopulation(country.getPopulation());
+        dto.setAreaSquareKm(country.getAreaSquareKm());
+        dto.setGdp(country.getGdp());
+        return dto;
     }
 }

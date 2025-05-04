@@ -158,7 +158,7 @@ public class CountryService {
         countryRepository.delete(country);
 
         invalidateDependentCaches(country);
-        searchCache.remove("allCities");
+        searchCache.remove(ALL_CITIES);
         searchCache.remove("allCitiesByCountryId_" + id);
         logger.info("🗑️ Deleted country ID: {}", id);
     }

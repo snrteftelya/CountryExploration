@@ -64,8 +64,7 @@ public class CityService {
                 logger.info("Getting cities from cache");
                 return cities.stream()
                         .filter(c -> c.getCountry() == null || countryRepository.existsById(
-                                c.getCountry().getId()))
-                        .collect(Collectors.toList());
+                                c.getCountry().getId())).toList();
             }
             logger.warn("Invalid or empty cache entry for key: {}", ALL_CITIES);
             searchCache.remove(ALL_CITIES);
@@ -74,8 +73,7 @@ public class CityService {
         List<City> cities = cityRepository.findAll();
         cities = cities.stream()
                 .filter(c -> c.getCountry() == null || countryRepository.existsById(
-                        c.getCountry().getId()))
-                .collect(Collectors.toList());
+                        c.getCountry().getId())).toList();
 
         searchCache.put(ALL_CITIES, cities);
         logger.info("Cities loaded from database and cached");

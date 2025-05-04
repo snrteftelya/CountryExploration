@@ -17,14 +17,14 @@ public class CityDto {
 
     @SuppressWarnings("checkstyle:LocalVariableName")
     public static CityDto fromEntity(City city) {
-        CityDto Dto = new CityDto();
-        Dto.setId(city.getId());
-        Dto.setName(city.getName());
-        Dto.setPopulation(city.getPopulation());
-        Dto.setAreaSquareKm(city.getAreaSquareKm());
+        CityDto dto = new CityDto();
+        dto.setId(city.getId());
+        dto.setName(city.getName());
+        dto.setPopulation(city.getPopulation());
+        dto.setAreaSquareKm(city.getAreaSquareKm());
         if (city.getCountry() != null) {
-            Dto.setCountry(CountryDto.fromEntity(city.getCountry()));
+            dto.setCountry(CountryDto.fromEntity(city.getCountry()));
         }
-        return Dto;
+        return dto;
     }
 }
