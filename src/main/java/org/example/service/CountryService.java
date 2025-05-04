@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+
 @Service
 @AllArgsConstructor
 public class CountryService {
@@ -31,6 +32,7 @@ public class CountryService {
     private final CountryRepository countryRepository;
     private final SearchCache searchCache;
 
+    private static final String ALL_CITIES = "allCities";
     private static final String ALL_COUNTRIES = "all_countries";
     private static final String COUNTRY_PREFIX = "country_";
     private static final String CITIES_BY_COUNTRY_PREFIX = "cities_country_";
@@ -104,11 +106,10 @@ public class CountryService {
     public Country updateCountry(Long countryId, String name, String capital,
                                  Double population, Double areaSquareKm, Double gdp) {
         logger.debug("Updating country ID: {}", countryId);
-
-        Country country = getCountryById(countryId);
+        Country country = countryRepository.findCountryWithCitiesAndNationsById(countryId)
+                .orElseThrow(() -> new ObjectNotFoundException("Country not found"));
         Country originalCountry = new Country();
         BeanUtils.copyProperties(country, originalCountry);
-
         if (name != null && !name.equals(country.getName())) {
             countryRepository.findCountryByName(name)
                     .ifPresent(c -> {
@@ -117,17 +118,21 @@ public class CountryService {
                     });
             country.setName(name);
         }
-
-
         Optional.ofNullable(capital).ifPresent(country::setCapital);
         Optional.ofNullable(population).ifPresent(country::setPopulation);
         Optional.ofNullable(areaSquareKm).ifPresent(country::setAreaSquareKm);
         Optional.ofNullable(gdp).ifPresent(country::setGdp);
-
         Country updatedCountry = countryRepository.save(country);
         updateCache(originalCountry, updatedCountry);
+        invalidateCitiesCacheForCountry(countryId);
         logger.info("🔄 Updated country ID: {}", countryId);
         return updatedCountry;
+    }
+
+    private void invalidateCitiesCacheForCountry(Long countryId) {
+        searchCache.remove(CITIES_BY_COUNTRY_PREFIX + countryId);
+        searchCache.remove(ALL_CITIES);
+        logger.info("Invalidated cities cache for country ID: {}", countryId);
     }
 
 
@@ -135,19 +140,14 @@ public class CountryService {
     public void deleteCountry(Long id) {
         logger.warn("Attempting to delete country ID: {}", id);
 
-        Country country = countryRepository.findById(id)
+        Country country = countryRepository.findCountryWithCitiesById(id)
                 .orElseThrow(() -> new ObjectNotFoundException("Country not found with ID: " + id));
 
-
-        cityRepository.deleteAll();
-
-        cityRepository.flush();
-
-
-        if (country.getCities() != null) {
-            country.getCities().clear();
+        for (City city : country.getCities()) {
+            city.setCountry(null);
+            cityRepository.save(city);
         }
-
+        country.getCities().clear();
 
         if (country.getNations() != null) {
             country.getNations().forEach(nation -> nation.getCountries().remove(country));
@@ -158,6 +158,8 @@ public class CountryService {
         countryRepository.delete(country);
 
         invalidateDependentCaches(country);
+        searchCache.remove("allCities");
+        searchCache.remove("allCitiesByCountryId_" + id);
         logger.info("🗑️ Deleted country ID: {}", id);
     }
 
@@ -190,6 +192,8 @@ public class CountryService {
 
 
         searchCache.put(COUNTRY_PREFIX + newCountry.getId(), newCountry);
+        searchCache.remove(CITIES_BY_COUNTRY_PREFIX + newCountry.getId());
+
     }
 
     private void invalidateDependentCaches(Country country) {

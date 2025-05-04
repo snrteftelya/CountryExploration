@@ -2,7 +2,6 @@ package org.example.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import org.example.dto.CountryDto;
 import org.example.model.City;
 
 @Data
@@ -23,7 +22,9 @@ public class CityDto {
         Dto.setName(city.getName());
         Dto.setPopulation(city.getPopulation());
         Dto.setAreaSquareKm(city.getAreaSquareKm());
-        Dto.setCountry(CountryDto.fromEntity(city.getCountry()));
+        if (city.getCountry() != null) {
+            Dto.setCountry(CountryDto.fromEntity(city.getCountry()));
+        }
         return Dto;
     }
 }

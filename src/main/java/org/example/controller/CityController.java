@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 import lombok.AllArgsConstructor;
 import org.example.dto.CityDto;
+import org.example.exception.ObjectNotFoundException;
 import org.example.model.City;
 import org.example.service.CityService;
 import org.springframework.http.HttpStatus;
@@ -44,17 +45,12 @@ public class CityController {
     }
 
     @GetMapping("/countries/{countryId}/cities")
-    public ResponseEntity<List<CityDto>> getCitiesByCountryId(
+    public ResponseEntity<Set<CityDto>> getCitiesByCountryId(
             @PathVariable Long countryId) {
-        Set<City> cities = cityService.getCitiesByCountryId(countryId);
-        if (cities.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(
-                cities.stream()
-                        .map(CityDto::fromEntity)
-                        .toList()
-        );
+        Set<CityDto> cities = cityService.getCitiesByCountryId(countryId);
+        return cities.isEmpty()
+                ? ResponseEntity.noContent().build()
+                : ResponseEntity.ok(cities);
     }
 
     @PostMapping(path = "countries/{countryId}/city")
@@ -116,6 +112,19 @@ public class CityController {
             final Long countryId) {
         cityService.deleteCitiesByCountryId(countryId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping("/cities/{cityId}")
+    @Operation(method = "DELETE",
+            summary = "Delete city",
+            description = "Delete city by id")
+    public ResponseEntity<Void> deleteCity(@PathVariable Long cityId) {
+        try {
+            cityService.deleteCityById(cityId);
+            return ResponseEntity.noContent().build();
+        } catch (ObjectNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @DeleteMapping(path = "countries/{countryId}/cities/{cityId}")

@@ -34,10 +34,10 @@ public class City {
     private Double population;
 
     @Column(name = "area")
-    @Schema(example = "50000")
+    @Schema(example = "348.84")
     private Double areaSquareKm;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "country_id")
+    @JoinColumn(name = "country_id", nullable = true)
     private Country country;
 }

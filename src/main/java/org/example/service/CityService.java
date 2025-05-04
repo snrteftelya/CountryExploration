@@ -7,75 +7,75 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import org.example.cache.SearchCache;
+import org.example.dto.CityDto;
 import org.example.exception.ObjectExistedException;
 import org.example.exception.ObjectNotFoundException;
 import org.example.model.City;
 import org.example.model.Country;
 import org.example.repository.CityRepository;
 import org.example.repository.CountryRepository;
-import org.hibernate.Hibernate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-
 @Service
 @AllArgsConstructor
 public class CityService {
-
     public static final String NOT_FOUND_MESSAGE = "Country not found";
     private final CityRepository cityRepository;
-
     private final CountryRepository countryRepository;
-
     private final SearchCache searchCache;
     private static final Logger logger = LoggerFactory.getLogger(CityService.class);
 
-    private static final String ALL_CITIES_BY_COUNTRY_ID =
-            "allCitiesByCountryId_";
+    private static final String CITIES_BY_COUNTRY_PREFIX = "cities_country_";
+    private static final String CITY_PREFIX = "city_";
+    private static final String COUNTRY_PREFIX = "country_";
+    private static final String ALL_CITIES_BY_COUNTRY_ID = "allCitiesByCountryId_";
     private static final String ALL_CITIES = "allCities";
-    private static final String ALL_COUNTRIES_BY_NATION_ID =
-            "allCountriesByNationId_";
-    private static final String ALL_COUNTRIES = "allCountries";
+    private static final String ALL_COUNTRIES_BY_NATION_ID = "allCountriesByNationId_";
     private static final String COUNTRY_ID = "countryId_";
 
-
     private void updateCache(final Country country, String action) {
-        logger.info("🔄 Updating cache for country '{}' (ID: {}). Action: {}", country.getName(),
-                country.getId(), action);
+        String countryName = country.getName() != null ? country.getName() : "unknown";
+        logger.info("🔄 Updating cache for country '{}' (ID: {}). Action: {}",
+                countryName, country.getId(), action);
 
         searchCache.remove(ALL_CITIES);
         searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + country.getId());
         searchCache.remove(COUNTRY_ID + country.getId());
+        searchCache.remove(CITIES_BY_COUNTRY_PREFIX + country.getId());
 
-        country.getNations().forEach(nation ->
-                searchCache.remove(ALL_COUNTRIES_BY_NATION_ID + nation.getId())
-        );
+        if (country.getNations() != null) {
+            country.getNations().forEach(nation ->
+                    searchCache.remove(ALL_COUNTRIES_BY_NATION_ID + nation.getId())
+            );
+        }
     }
 
-    @Transactional()
+    @Transactional
     public List<City> getCities() {
         if (searchCache.containsKey(ALL_CITIES)) {
             Object cachedValue = searchCache.get(ALL_CITIES);
             List<City> cities = safeCastToListOfCities(cachedValue);
-            if (cities != null) {
+            if (!cities.isEmpty()) {
                 logger.info("Getting cities from cache");
-                return cities;
+                return cities.stream()
+                        .filter(c -> c.getCountry() == null || countryRepository.existsById(
+                                c.getCountry().getId()))
+                        .collect(Collectors.toList());
             }
-            logger.warn("Invalid cache entry for key: {}", ALL_CITIES);
+            logger.warn("Invalid or empty cache entry for key: {}", ALL_CITIES);
             searchCache.remove(ALL_CITIES);
         }
 
         List<City> cities = cityRepository.findAll();
-
-
-        cities.forEach(city -> {
-            if (city.getCountry() != null) {
-                Hibernate.initialize(city.getCountry().getCities());
-            }
-        });
+        cities = cities.stream()
+                .filter(c -> c.getCountry() == null || countryRepository.existsById(
+                        c.getCountry().getId()))
+                .collect(Collectors.toList());
 
         searchCache.put(ALL_CITIES, cities);
         logger.info("Cities loaded from database and cached");
@@ -91,77 +91,98 @@ public class CityService {
     }
 
     @Transactional
-    public Set<City> getCitiesByCountryId(final Long countryId) {
-        String cacheKey = ALL_CITIES_BY_COUNTRY_ID + countryId;
+    public Set<CityDto> getCitiesByCountryId(Long countryId) {
+        if (countryId == null) {
+            throw new IllegalArgumentException("Country ID cannot be null");
+        }
+        String cacheKey = CITIES_BY_COUNTRY_PREFIX + countryId;
 
         if (searchCache.containsKey(cacheKey)) {
-            return (Set<City>) searchCache.get(cacheKey);
+            Object cached = searchCache.get(cacheKey);
+            if (cached instanceof Set<?> set && (set.isEmpty() || set.iterator().next()
+                    instanceof CityDto)) {
+                logger.info("Getting cities with countryId_{} from cache", countryId);
+                return (Set<CityDto>) cached;
+            }
+            if (cached instanceof List<?> list && (list.isEmpty() || list.get(0)
+                    instanceof CityDto)) {
+                logger.info("Converting cached list to set for countryId_{}", countryId);
+                Set<CityDto> converted = new HashSet<>((List<CityDto>) cached);
+                searchCache.put(cacheKey, converted);
+                return converted;
+            }
+            logger.warn("Invalid cache entry for key: {}. Removing cache.", cacheKey);
+            searchCache.remove(cacheKey);
         }
 
+        if (!countryRepository.existsById(countryId)) {
+            return Collections.emptySet();
+        }
+        Set<CityDto> result = cityRepository.findByCountryId(countryId).stream()
+                .map(CityDto::fromEntity)
+                .collect(Collectors.toSet());
+        searchCache.put(cacheKey, result);
+        logger.info("Cities with countryId_{} loaded from database and cached", countryId);
+        return result;
+    }
 
-        Set<City> cities = new HashSet<>(cityRepository.findByCountryId(countryId));
-
-        searchCache.put(cacheKey, cities);
-        return cities;
+    public void evictCitiesByCountryCache(Long countryId) {
+        String cacheKey = CITIES_BY_COUNTRY_PREFIX + countryId;
+        searchCache.remove(cacheKey);
+        logger.info("Evicted cities cache for country {}", countryId);
     }
 
     @Transactional
     public City addNewCityByCountryId(final Long countryId, final City cityRequest) {
+        if (countryId == null) {
+            throw new IllegalArgumentException("Country ID cannot be null");
+        }
+        if (cityRequest == null) {
+            throw new IllegalArgumentException("City request cannot be null");
+        }
         Country country = countryRepository
                 .findCountryWithCitiesById(countryId)
-                .orElseThrow(() -> new ObjectNotFoundException(
-                        "country, which id " + countryId
-                                + " does not exist, you can't add new city"));
+                .orElseThrow(() -> new ObjectNotFoundException("country, which id "
+                        + countryId + " does not exist, you can't add new city"));
 
-
+        if (cityRequest.getName() == null || cityRequest.getName().isEmpty()) {
+            throw new IllegalArgumentException("City name cannot be null or empty");
+        }
         if (country.getCities().stream().anyMatch(c -> c.getName().equals(cityRequest.getName()))) {
             throw new ObjectExistedException("City with name "
                     + cityRequest.getName() + " already exists");
         }
 
-
         cityRequest.setCountry(country);
-
-
+        updateCache(country, "ADD");
         cityRepository.save(cityRequest);
-
-        searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId);
-
-        searchCache.remove(ALL_CITIES);
-
-
-        if (searchCache.containsKey(ALL_CITIES)) {
-            List<City> allCities = (List<City>) searchCache.get(ALL_CITIES);
-            allCities.add(cityRequest);
-            searchCache.put(ALL_CITIES, allCities);
-        }
 
         logger.info("➕ Added city '{}' (ID: {}) to country '{}' (ID: {})",
                 cityRequest.getName(), cityRequest.getId(), country.getName(), country.getId());
-
-        updateCache(country, "ADD");
         return cityRequest;
     }
 
     @Transactional
     public List<City> addNewCitiesByCountryId(final Long countryId,
                                               final List<City> citiesRequest) {
-
+        if (countryId == null) {
+            throw new IllegalArgumentException("Country ID cannot be null");
+        }
+        if (citiesRequest == null) {
+            throw new IllegalArgumentException("Cities request cannot be null");
+        }
         List<City> addedCities = new ArrayList<>();
-
-        citiesRequest.forEach(city -> addedCities
-                .add(addNewCityByCountryId(countryId, city)));
-
+        citiesRequest.forEach(city -> addedCities.add(addNewCityByCountryId(countryId, city)));
         return addedCities;
     }
 
     @SuppressWarnings("checkstyle:VariableDeclarationUsageDistance")
     @Transactional
-    public City updateCity(final Long cityId,
-                           final String name,
-                           final Double population,
-                           final Double areaSquareKm) {
-
+    public City updateCity(final Long cityId, final String name,
+                           final Double population, final Double areaSquareKm) {
+        if (cityId == null) {
+            throw new IllegalArgumentException("City ID cannot be null");
+        }
         City city = cityRepository.findById(cityId)
                 .orElseThrow(() -> new ObjectNotFoundException("City not found"));
 
@@ -169,11 +190,9 @@ public class CityService {
                 .findCountryWithCitiesByCityId(cityId)
                 .orElseThrow(() -> new ObjectNotFoundException(NOT_FOUND_MESSAGE));
 
-
         String oldName = city.getName();
 
-
-        if (name != null && !name.equals(city.getName())) {
+        if (name != null && !name.isEmpty() && !name.equals(city.getName())) {
             boolean nameExists = country.getCities().stream()
                     .anyMatch(c -> c.getName().equalsIgnoreCase(name));
             if (nameExists) {
@@ -182,57 +201,74 @@ public class CityService {
             city.setName(name);
         }
 
-
         Optional.ofNullable(population).filter(p -> p > 0).ifPresent(city::setPopulation);
         Optional.ofNullable(areaSquareKm).filter(a -> a > 0).ifPresent(city::setAreaSquareKm);
 
-
+        updateCache(country, "UPDATE");
         cityRepository.save(city);
 
-
-        searchCache.remove(ALL_CITIES);
-        searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + country.getId());
-
-        if (searchCache.containsKey(ALL_CITIES)) {
-            List<City> allCities = (List<City>) searchCache.get(ALL_CITIES);
-
-            allCities.removeIf(c -> c.getId().equals(cityId));
-            allCities.add(city);
-            searchCache.put(ALL_CITIES, allCities);
-        }
-
         logger.info("✏️ Updated city '{}' (ID: {}). New name: '{}', population: {}, area: {} km²",
-                oldName, cityId, name, population, areaSquareKm);
-
-        updateCache(country, "UPDATE");
+                oldName, cityId, name != null ? name : oldName,
+                population != null ? population : city.getPopulation(),
+                areaSquareKm != null ? areaSquareKm : city.getAreaSquareKm());
 
         return city;
     }
 
     @Transactional
     public void deleteCitiesByCountryId(final Long countryId) {
+        if (countryId == null) {
+            throw new IllegalArgumentException("Country ID cannot be null");
+        }
         Country country = countryRepository.findCountryWithCitiesById(countryId)
                 .orElseThrow(() -> new ObjectNotFoundException(NOT_FOUND_MESSAGE));
 
         Set<City> citiesToDelete = new HashSet<>(country.getCities());
         logger.info("🗑️ Deleting {} cities from country '{}'",
-                citiesToDelete.size(), country.getName());
+                citiesToDelete.size(), country.getName() != null ? country.getName() : "unknown");
 
-
+        updateCache(country, "DELETE");
         cityRepository.deleteAll(citiesToDelete);
         country.getCities().clear();
         countryRepository.save(country);
+    }
 
+    @Transactional
+    public void deleteCityById(Long cityId) {
+        if (cityId == null) {
+            throw new IllegalArgumentException("City ID cannot be null");
+        }
+        City city = cityRepository.findByIdWithCountry(cityId)
+                .orElseThrow(() -> new ObjectNotFoundException("City with id "
+                        + cityId + " not found"));
 
+        Long countryId = city.getCountry() != null ? city.getCountry().getId() : null;
+
+        if (countryId != null) {
+            city.getCountry().getCities().remove(city);
+        }
+
+        cityRepository.delete(city);
+        invalidateCityCaches(cityId, countryId);
+
+        logger.info("Deleted city ID: {}, previously belonged to country ID: {}",
+                cityId, countryId);
+    }
+
+    private void invalidateCityCaches(Long cityId, Long countryId) {
         searchCache.remove(ALL_CITIES);
-        searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId);
-        searchCache.remove(COUNTRY_ID + countryId);
-
-        logger.info("✅ All cities deleted from country '{}'. Cache invalidated", country.getName());
+        searchCache.remove(CITY_PREFIX + cityId);
+        if (countryId != null) {
+            searchCache.remove(CITIES_BY_COUNTRY_PREFIX + countryId);
+            searchCache.remove(COUNTRY_PREFIX + countryId);
+        }
     }
 
     @Transactional
     public void deleteCityByIdFromCountryByCountryId(final Long countryId, final Long cityId) {
+        if (countryId == null || cityId == null) {
+            throw new IllegalArgumentException("Country ID and City ID cannot be null");
+        }
         Country country = countryRepository.findCountryWithCitiesById(countryId)
                 .orElseThrow(() -> new ObjectNotFoundException(NOT_FOUND_MESSAGE));
 
@@ -241,23 +277,10 @@ public class CityService {
 
         logger.info("🗑️ Deleting city '{}' (ID: {})", city.getName(), cityId);
 
-
+        updateCache(country, "DELETE");
         cityRepository.deleteById(cityId);
         country.getCities().remove(city);
         countryRepository.save(country);
-
-        searchCache.remove(ALL_CITIES);
-        searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId);
-
-        if (searchCache.containsKey(ALL_CITIES)) {
-            List<City> allCities = (List<City>) searchCache.get(ALL_CITIES);
-            allCities.removeIf(c -> c.getId().equals(cityId));
-            searchCache.put(ALL_CITIES, allCities);
-        }
-
-
-        searchCache.remove(ALL_CITIES_BY_COUNTRY_ID + countryId);
-        searchCache.remove(COUNTRY_ID + countryId);
 
         logger.info("✅ City '{}' (ID: {}) deleted and cache invalidated", city.getName(), cityId);
     }
