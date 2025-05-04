@@ -27,6 +27,7 @@ db/
 /nbdist/
 /.nb-gradle/
 build/
+logs/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
