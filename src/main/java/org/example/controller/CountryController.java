@@ -2,6 +2,10 @@ package org.example.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -22,104 +26,113 @@ import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "api/country")
-@Tag(name = "Countries", description = "You can view, add, update"
-        + " and delete information about countries")
+@RequestMapping("api/country")
+@Tag(name = "Countries", description = "API for managing country information,"
+       + " including viewing, adding, updating, and deleting countries")
 @CrossOrigin
 public class CountryController {
 
     private final CountryService countryService;
 
     @GetMapping
-    @Operation(method = "GET",
-            summary = "Get countries",
-            description = "Get information about all countries")
+    @Operation(summary = "Get all countries", description = "Retrieve a list of all countries")
+    @ApiResponses({@ApiResponse(responseCode = "200",
+            description = "List of countries retrieved successfully",
+                    content = @Content(schema = @Schema(implementation = Country.class))),
+                   @ApiResponse(responseCode = "204", description = "No countries found")
+    })
     public ResponseEntity<List<Country>> getCountries() {
         List<Country> countries = countryService.getCountries();
-        if (countries.isEmpty()) {
-            return new ResponseEntity<>(countries, HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(countries, HttpStatus.OK);
+        return countries.isEmpty()
+                ? ResponseEntity.noContent().build()
+                : ResponseEntity.ok(countries);
     }
 
-    @GetMapping(path = "{id}")
-    @Operation(method = "GET",
-            summary = "Get country",
-            description = "Get information about country by its id")
+    @GetMapping("/{id}")
+    @Operation(summary = "Get country by ID", description = "Retrieve a country by its unique ID")
+    @ApiResponses({@ApiResponse(responseCode = "200",
+            description = "Country retrieved successfully",
+                    content = @Content(schema = @Schema(implementation = Country.class))),
+                   @ApiResponse(responseCode = "404", description = "Country not found")
+    })
     public ResponseEntity<Country> getCountryById(
-            @PathVariable("id")
-            @Parameter(description = "Id of the country,"
-                    + " which information you want to see")
-            final Long countryId) {
-        return new ResponseEntity<>(countryService
-                .getCountryById(countryId), HttpStatus.OK);
+            @PathVariable("id") @Parameter(
+                    description = "ID of the country to retrieve", example = "1") Long countryId) {
+        return ResponseEntity.ok(countryService.getCountryById(countryId));
     }
 
     @PostMapping
-    @Operation(method = "POST",
-            summary = "Add country",
-            description = "Add new country at existed countries")
+    @Operation(summary = "Add a new country",
+            description = "Create a new country with the provided details")
+    @ApiResponses({@ApiResponse(responseCode = "201", description = "Country created successfully",
+                    content = @Content(schema = @Schema(implementation = Country.class))),
+                   @ApiResponse(responseCode = "400", description = "Invalid country data")
+    })
     public ResponseEntity<Country> addNewCountry(
-            @RequestBody final Country country) {
-        return new ResponseEntity<>(countryService
-                .addNewCountry(country), HttpStatus.CREATED);
+            @RequestBody @Parameter(description = "Country object to add",
+                    required = true) Country country) {
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(countryService.addNewCountry(country));
     }
 
     @PostMapping("/bulk")
-    @Operation(method = "POST",
-            summary = "Add countries",
-            description = "Add new list of countries at existed countries")
+    @Operation(summary = "Add multiple countries", description = "Create a list of new countries")
+    @ApiResponses({@ApiResponse(responseCode = "201",
+            description = "Countries created successfully",
+                    content = @Content(schema = @Schema(implementation = Country.class))),
+                   @ApiResponse(responseCode = "400", description = "Invalid countries data")
+    })
     public ResponseEntity<List<Country>> addNewCountries(
-            @RequestBody final List<Country> countries) {
-        return new ResponseEntity<>(countryService
-                .addNewCountries(countries), HttpStatus.CREATED);
+            @RequestBody @Parameter(description = "List of country objects to add",
+                    required = true) List<Country> countries) {
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(countryService.addNewCountries(countries));
     }
 
-    @PutMapping(path = "{id}")
-    @Operation(method = "PUT",
-            summary = "Update country",
-            description = "Update information about country by its id")
+    @PutMapping("/{id}")
+    @Operation(summary = "Update a country", description = "Update details of a country by its ID")
+    @ApiResponses({@ApiResponse(responseCode = "200", description = "Country updated successfully",
+                    content = @Content(schema = @Schema(implementation = Country.class))),
+                   @ApiResponse(responseCode = "404", description = "Country not found"),
+                   @ApiResponse(responseCode = "400", description = "Invalid update parameters")
+    })
     public ResponseEntity<Country> updateCountry(
-            @PathVariable("id") final Long countryId,
-            @RequestParam(required = false)
-            @Parameter(description = "Name of country")
-            final String name,
-            @RequestParam(required = false)
-            @Parameter(description = "Name of capital of country")
-            final String capital,
-            @RequestParam(required = false)
-            @Parameter(description = "Quantity of population of country")
-            final Double population,
-            @RequestParam(required = false)
-            @Parameter(description = "Area of country in square km")
-            final Double areaSquareKm,
-            @RequestParam(required = false)
-            @Parameter(description = "Quantity of gdp of country")
-            final Double gdp) {
-        return new ResponseEntity<>(countryService
-                .updateCountry(countryId, name, capital,
-                        population, areaSquareKm, gdp),
-                HttpStatus.OK);
+            @PathVariable("id") @Parameter(description = "ID of the country to update",
+                    example = "1") Long countryId,
+            @RequestParam(required = false) @Parameter(description = "Name of the country",
+                    example = "Germany") String name,
+            @RequestParam(required = false) @Parameter(description = "Capital of the country",
+                    example = "Berlin") String capital,
+            @RequestParam(required = false) @Parameter(description = "Population of the country",
+                    example = "83240525") Double population,
+            @RequestParam(required = false) @Parameter(description = "Area in square kilometers",
+                    example = "357582") Double areaSquareKm,
+            @RequestParam(required = false) @Parameter(description = "GDP in billions USD",
+                    example = "4456.0") Double gdp) {
+        return ResponseEntity.ok(countryService.updateCountry(countryId, name, capital, population,
+                areaSquareKm, gdp));
     }
 
-    @DeleteMapping(path = "{id}")
-    @Operation(method = "DELETE",
-            summary = "Delete country by id",
-            description = "Delete country from existing countries")
-    public ResponseEntity<HttpStatus> deleteCountry(
-            @PathVariable("id")
-            @Parameter(description = "Id of the country, that's need to delete")
-            final Long countryId) {
+    @DeleteMapping("/{id}")
+    @Operation(summary = "Delete a country", description = "Delete a country by its ID")
+    @ApiResponses({@ApiResponse(responseCode = "204", description = "Country deleted successfully"),
+                   @ApiResponse(responseCode = "404", description = "Country not found")
+    })
+    public ResponseEntity<Void> deleteCountry(
+            @PathVariable("id") @Parameter(
+                    description = "ID of the country to delete", example = "1") Long countryId) {
         countryService.deleteCountry(countryId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping
-    @Operation(method = "DELETE",
-            summary = "Delete all countries",
-            description = "Delete all countries and their cities")
-    public ResponseEntity<HttpStatus> deleteCountries() {
+    @Operation(summary = "Delete all countries",
+            description = "Delete all countries and their associated data")
+    @ApiResponses({@ApiResponse(responseCode = "204",
+            description = "All countries deleted successfully")
+    })
+    public ResponseEntity<Void> deleteCountries() {
         countryService.deleteCountries();
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return ResponseEntity.noContent().build();
     }
 }

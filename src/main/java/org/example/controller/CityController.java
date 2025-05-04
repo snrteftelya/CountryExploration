@@ -2,6 +2,10 @@ package org.example.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import java.util.Set;
@@ -26,76 +30,79 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api")
-@Tag(name = "Cities", description = "You can view, add, update"
-        + " and delete information about cities")
+@Tag(name = "Cities", description = "API for managing "
+        + "city information, including viewing, adding, updating, and deleting cities")
 @CrossOrigin
 public class CityController {
 
     private final CityService cityService;
 
-    @GetMapping(path = "cities")
-    @Operation(method = "GET", summary = "Get cities")
+    @GetMapping("/cities")
+    @Operation(summary = "Get all cities", description = "Retrieve a list of all cities")
+    @ApiResponses({@ApiResponse(responseCode = "200",
+            description = "List of cities retrieved successfully",
+                    content = @Content(schema = @Schema(implementation = CityDto.class))),
+                   @ApiResponse(responseCode = "204", description = "No cities found")
+    })
     public ResponseEntity<List<CityDto>> getCities() {
         List<City> cities = cityService.getCities();
-        return ResponseEntity.ok(
-                cities.stream()
-                        .map(CityDto::fromEntity)
-                        .toList()
-        );
+        List<CityDto> cityDtos = cities.stream().map(CityDto::fromEntity).toList();
+        return cityDtos.isEmpty() ? ResponseEntity.noContent().build()
+                : ResponseEntity.ok(cityDtos);
     }
 
     @GetMapping("/countries/{countryId}/cities")
+    @Operation(summary = "Get cities by country ID",
+            description = "Retrieve a list of cities for a specific country")
+    @ApiResponses({@ApiResponse(responseCode = "200",
+            description = "List of cities retrieved successfully",
+                    content = @Content(schema = @Schema(implementation = CityDto.class))),
+                   @ApiResponse(responseCode = "204",
+                           description = "No cities found for the country"),
+                   @ApiResponse(responseCode = "404", description = "Country not found")
+    })
     public ResponseEntity<Set<CityDto>> getCitiesByCountryId(
-            @PathVariable Long countryId) {
+            @PathVariable @Parameter(description = "ID of the country",
+                    example = "1") Long countryId) {
         Set<CityDto> cities = cityService.getCitiesByCountryId(countryId);
-        return cities.isEmpty()
-                ? ResponseEntity.noContent().build()
-                : ResponseEntity.ok(cities);
+        return cities.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(cities);
     }
 
-    @PostMapping(path = "countries/{countryId}/city")
-    @Operation(method = "POST",
-            summary = "Add city in country",
-            description = "Add new city in country by its id")
-    public ResponseEntity<City> addNewCityByCountryId(
-            @PathVariable(value = "countryId")
-            @Parameter(description = "Id of the country, "
-                    + "in which you want to add city") final Long countryId,
-            @RequestBody final City city) {
-        return new ResponseEntity<>(cityService
-                .addNewCityByCountryId(countryId, city),
-                HttpStatus.CREATED);
+    @PostMapping("/countries/{countryId}/cities")
+    @Operation(summary = "Add cities to a country",
+            description = "Add one or more cities to a specific country")
+    @ApiResponses({@ApiResponse(responseCode = "201", description = "Cities created successfully",
+                    content = @Content(schema = @Schema(implementation = City.class))),
+                   @ApiResponse(responseCode = "400", description = "Invalid city data"),
+                   @ApiResponse(responseCode = "404", description = "Country not found")
+    })
+    public ResponseEntity<List<City>> addCitiesByCountryId(
+            @PathVariable @Parameter(description = "ID of the country to add the cities to",
+                    example = "1") Long countryId,
+            @RequestBody @Parameter(
+                    description = "Single city object or list of city objects to add",
+                    required = true) List<City> cities) {
+        List<City> addedCities = cityService.addNewCitiesByCountryId(countryId, cities);
+        return ResponseEntity.status(HttpStatus.CREATED).body(addedCities);
     }
 
-    @PostMapping(path = "countries/{countryId}/cities")
-    @Operation(method = "POST",
-            summary = "Add cities in country",
-            description = "Add new list of cities in country by its id")
-    public ResponseEntity<List<City>> addNewCitiesByCountryId(
-            @PathVariable(value = "countryId")
-            @Parameter(description = "Id of the country, "
-                    + "in which you want to add cities") final Long countryId,
-            @RequestBody final List<City> cities) {
-        return new ResponseEntity<>(cityService
-                .addNewCitiesByCountryId(countryId, cities),
-                HttpStatus.CREATED);
-    }
-
-    @PutMapping(path = "cities/{id}")
-    @Operation(method = "PUT",
-            summary = "Update city",
-            description = "Update information about city by its id")
+    @PutMapping("/cities/{id}")
+    @Operation(summary = "Update a city", description = "Update details of a city by its ID")
+    @ApiResponses({@ApiResponse(responseCode = "200", description = "City updated successfully",
+                    content = @Content(schema = @Schema(implementation = City.class))),
+                   @ApiResponse(responseCode = "400", description = "Invalid update parameters"),
+                   @ApiResponse(responseCode = "404", description = "City or country not found")
+    })
     public ResponseEntity<City> updateCity(
-            @PathVariable("id") final Long cityId,
-            @RequestParam(required = false)
-            @Parameter(description = "Name of city")
-            final String name,
-            @RequestParam(required = false)
-            @Parameter(description = "Quantity of population of city")
-            final Double population,
-            @RequestParam(required = false)
-            @Parameter(description = "Area of city in square km")
-            final Double areaSquareKm) {
+            @PathVariable("id") @Parameter(description = "ID of the city to update",
+                    example = "1") Long cityId,
+            @RequestParam(required = false) @Parameter(
+                    description = "Name of the city", example = "Minsk") String name,
+            @RequestParam(required = false) @Parameter(
+                    description = "Population of the city", example = "2000000") Double population,
+            @RequestParam(required = false) @Parameter(
+                    description = "Area in square kilometers",
+                    example = "409.5") Double areaSquareKm) {
         if (name != null && !isValidName(name)) {
             throw new IllegalArgumentException("Invalid city name");
         }
@@ -107,32 +114,34 @@ public class CityController {
                 || Double.isInfinite(areaSquareKm))) {
             throw new IllegalArgumentException("Invalid area value");
         }
-        City updatedCity = cityService.updateCity(cityId, name, population, areaSquareKm);
-        return new ResponseEntity<>(updatedCity, HttpStatus.OK);
+        return ResponseEntity.ok(cityService.updateCity(cityId, name, population, areaSquareKm));
     }
 
     private boolean isValidName(String name) {
         return name.matches("^[a-zA-Z0-9\\s\\-,.]{1,100}$");
     }
 
-    @DeleteMapping(path = "countries/{countryId}/cities")
-    @Operation(method = "DELETE",
-            summary = "Delete cities from country",
-            description = "Delete all cities from country by its id")
-    public ResponseEntity<HttpStatus> deleteCitiesByCountryId(
-            @PathVariable(value = "countryId")
-            @Parameter(description = "Id of the country,"
-                    + " in which you want to delete all cities")
-            final Long countryId) {
+    @DeleteMapping("/countries/{countryId}/cities")
+    @Operation(summary = "Delete all cities in a country",
+            description = "Delete all cities associated with a specific country")
+    @ApiResponses({@ApiResponse(responseCode = "204", description = "Cities deleted successfully"),
+                   @ApiResponse(responseCode = "404", description = "Country not found")
+    })
+    public ResponseEntity<Void> deleteCitiesByCountryId(
+            @PathVariable @Parameter(description = "ID of the country to delete cities from",
+                    example = "1") Long countryId) {
         cityService.deleteCitiesByCountryId(countryId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/cities/{cityId}")
-    @Operation(method = "DELETE",
-            summary = "Delete city",
-            description = "Delete city by id")
-    public ResponseEntity<Void> deleteCity(@PathVariable Long cityId) {
+    @Operation(summary = "Delete a city", description = "Delete a city by its ID")
+    @ApiResponses({@ApiResponse(responseCode = "204", description = "City deleted successfully"),
+                   @ApiResponse(responseCode = "404", description = "City not found")
+    })
+    public ResponseEntity<Void> deleteCity(
+            @PathVariable @Parameter(description = "ID of the city to delete",
+                    example = "1") Long cityId) {
         try {
             cityService.deleteCityById(cityId);
             return ResponseEntity.noContent().build();
@@ -141,20 +150,18 @@ public class CityController {
         }
     }
 
-    @DeleteMapping(path = "countries/{countryId}/cities/{cityId}")
-    @Operation(method = "DELETE",
-            summary = "Delete city from country",
-            description = "Delete city by its id from country by id")
-    public ResponseEntity<HttpStatus> deleteCityByIdFromCountryByCountryId(
-            @PathVariable(value = "countryId")
-            @Parameter(description = "Id of the country,"
-                    + " in which you want to delete city")
-            final Long countryId,
-            @PathVariable(value = "cityId")
-            @Parameter(description = "Id of the city,"
-                    + " that's need to delete from country")
-            final Long cityId) {
+    @DeleteMapping("/countries/{countryId}/cities/{cityId}")
+    @Operation(summary = "Delete a city from a country",
+            description = "Delete a specific city from a specific country")
+    @ApiResponses({@ApiResponse(responseCode = "204", description = "City deleted successfully"),
+                   @ApiResponse(responseCode = "404", description = "City or country not found")
+    })
+    public ResponseEntity<Void> deleteCityByIdFromCountryByCountryId(
+            @PathVariable @Parameter(description = "ID of the country",
+                    example = "1") Long countryId,
+            @PathVariable @Parameter(description = "ID of the city to delete",
+                    example = "1") Long cityId) {
         cityService.deleteCityByIdFromCountryByCountryId(countryId, cityId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return ResponseEntity.noContent().build();
     }
 }
